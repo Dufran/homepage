@@ -1,0 +1,10 @@
+services:
+  homepage:
+    container_name: homepage
+    build:
+      context: .
+    command: yarn start
+    env_file:
+      - .env
+    ports:
+      - '${SERVICE_PORT}:3000'

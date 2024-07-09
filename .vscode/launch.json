@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "fe+client",
+      "configurations": [ "fe", "client"],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+
+    {
+      "name": "fe",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "envFile": "${workspaceFolder}/.env",
+      "runtimeExecutable": "yarn",
+      "runtimeVersion": "20.11.1",
+      "runtimeArgs": ["run", "dev"],
+      "consoleTitle": "React"
+    },
+    
+    {
+      "name": "client",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "userDataDir": false,
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
