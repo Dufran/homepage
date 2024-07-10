@@ -38,13 +38,11 @@ export function Header() {
     </Button>
   ));
   return (
-    <div className={classes.footer}>
-      <div className={classes.inner}>
-        <Group className={classes.links}></Group>
-        <Group gap="xs" justify="flex-end" wrap="nowrap">
-          {items}
-        </Group>
-      </div>
+    <div className={classes.inner}>
+      <Group className={classes.links}></Group>
+      <Group gap="xs" justify="flex-end">
+        {items}
+      </Group>
     </div>
   );
 }

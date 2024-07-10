@@ -1,4 +1,4 @@
-import { Card, Avatar, Text, Group, Stack } from '@mantine/core';
+import { Card, Avatar, Text, Group, Stack, Badge } from '@mantine/core';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import classes from './UserInfo.module.css';
@@ -15,11 +15,23 @@ export function UserInfo() {
           </Text>
           <Text>Fullstack Developer</Text>
           <Text>Languages: English B2, Ukrainian Native speaker</Text>
-          <Text>
-            Commercial experience: {dayjs().diff(dayjs('2020-02-01'), 'month')} months or{' '}
-            {dayjs().diff(dayjs('2020-02-01'), 'years')} years
-          </Text>
-          <Text>Commercial projects: 14</Text>
+          <Group>
+            <Text>Commercial experience: </Text>
+            <Badge size="lg" circle>
+              {dayjs().diff(dayjs('2020-02-01'), 'month')}
+            </Badge>
+            months or
+            <Badge size="lg" circle>
+              ~{dayjs().diff(dayjs('2020-02-01'), 'years')}{' '}
+            </Badge>
+            years
+          </Group>
+          <Group>
+            <Text>Commercial projects: </Text>
+            <Badge size="lg" circle>
+              14
+            </Badge>
+          </Group>
           <Text>
             Codding time:{' '}
             <a href="https://wakatime.com/@b235aad2-892a-4e83-b8c3-a6cc36bc4cf4">
