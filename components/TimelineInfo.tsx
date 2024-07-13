@@ -47,7 +47,7 @@ export default function TimelineInfo() {
     'yahoofinance api',
     'facebook api',
     'instagram api',
-    'pinterest api',1
+    'pinterest api',
     'google translate api',
     'google calendar api',
     'google merchant api',
