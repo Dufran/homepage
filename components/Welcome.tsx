@@ -3,6 +3,7 @@ import classes from './Welcome.module.css';
 import { UserInfo } from './UserInfo';
 import TimelineInfo from './TimelineInfo';
 import { Header } from './Header';
+import SkillMatcher from './SkillMatcher';
 
 export function Welcome() {
   return (
@@ -25,6 +26,7 @@ export function Welcome() {
         About me
       </Title>
       <UserInfo />
+      <SkillMatcher />
       <Title mb={20} order={2}>
         Software development timeline
       </Title>

@@ -3,80 +3,11 @@ import { Timeline, Text, Badge, Group } from '@mantine/core';
 import { IconBriefcaseFilled } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { coaxSkills, planeksSkills, sebnSkills } from './vars';
 
 export default function TimelineInfo() {
   dayjs.extend(relativeTime);
 
-  const sebnSkills: string[] = [
-    'PhP',
-    'Laravel',
-    'JS',
-    'CSS',
-    'HTML',
-    'DHCP',
-    'Active directory',
-    'Ngnix',
-    'docker',
-    'Mysql',
-    'Git',
-    'Linux',
-    'Python',
-    'Django',
-    'Drf',
-    'Celery',
-    'React',
-    'Redux',
-    'Material UI',
-  ];
-  const coaxSkills: string[] = [
-    'fastapi',
-    'mongodb',
-    'postgresql',
-    'redis',
-    'pandas',
-    'numpy',
-    'drf spectacular',
-    'mermaid js',
-    'figma',
-    'numpy',
-    'mailjet',
-    'load-testing',
-    'locust',
-    'unit-testing',
-    'pytest',
-    'yahoofinance api',
-    'facebook api',
-    'instagram api',
-    'pinterest api',
-    'google translate api',
-    'google calendar api',
-    'google merchant api',
-    'twilio',
-    'jira',
-    'figma',
-    'pre-commit',
-    'ruff',
-    'aws:s3',
-    'aws:lambda',
-    'aws:ec2',
-    'aws:rds',
-    'aws:sqs',
-    'aws:sns',
-    'elasticsearch',
-  ];
-
-  const planeksSkills: string[] = [
-    'selenium',
-    'caddy',
-    'digital ocean',
-    'htmx',
-    'hyperscript',
-    'oauth2',
-    'office 365 api',
-    'bootstrap',
-    'mantine ui',
-    'trello',
-  ];
   return (
     <Timeline active={1} bulletSize={24} lineWidth={2}>
       <Timeline.Item
