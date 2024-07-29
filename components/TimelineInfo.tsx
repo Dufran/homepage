@@ -24,7 +24,7 @@ export default function TimelineInfo() {
         <Text p={2}>Gained skills:</Text>
         <Group gap={2}>
           {sebnSkills.map((skill) => (
-            <Badge key={skill}>{skill}</Badge>
+            <Badge key={skill.label}>{skill.label}</Badge>
           ))}
         </Group>
         <Group>
@@ -50,7 +50,7 @@ export default function TimelineInfo() {
         <Text p={2}>Gained skills:</Text>
         <Group gap={2}>
           {coaxSkills.map((skill) => (
-            <Badge key={skill}>{skill}</Badge>
+            <Badge key={skill.label}>{skill.label}</Badge>
           ))}
         </Group>
         <Group>
@@ -76,7 +76,7 @@ export default function TimelineInfo() {
         <Text p={2}>Gained skills:</Text>
         <Group gap={2}>
           {planeksSkills.map((skill) => (
-            <Badge key={skill}>{skill}</Badge>
+            <Badge key={skill.label}>{skill.label}</Badge>
           ))}
         </Group>
         <Group>
