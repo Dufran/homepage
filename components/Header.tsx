@@ -1,10 +1,12 @@
-import { Group, Button } from '@mantine/core';
+import { Group, Button, useMantineColorScheme, ActionIcon } from '@mantine/core';
 import {
   Icon,
   IconBrandGithub,
   IconBrandLinkedin,
   IconMail,
   IconReportAnalytics,
+  IconSun,
+  IconMoonStars,
 } from '@tabler/icons-react';
 import classes from './Header.module.css';
 
@@ -32,6 +34,8 @@ export const SocialLinks: SocialLink[] = [
   },
 ];
 export function Header() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme;
   const items = SocialLinks.map((link) => (
     <Button component="a" href={link.url} leftSection={<link.icon />} size="xs" key={link.label}>
       {link.label}
@@ -39,7 +43,16 @@ export function Header() {
   ));
   return (
     <div className={classes.inner}>
-      <Group className={classes.links}></Group>
+      <Group className={classes.links}>
+        <ActionIcon
+          variant="outline"
+          color={dark ? 'yellow' : 'blue'}
+          onClick={() => toggleColorScheme()}
+          title="Toggle color scheme"
+        >
+          {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
+        </ActionIcon>
+      </Group>
       <Group gap="xs" justify="flex-end">
         {items}
       </Group>

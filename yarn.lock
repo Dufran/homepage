@@ -2387,6 +2387,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/convert-colors@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@csstools/convert-colors@npm:2.0.0"
+  checksum: 10c0/242af506b24a4b286966171f3995214487b45bd07cd4cc24167b3b2ec70ab2b701098a3b1e2403b78f6b83735afb9cdcf415634d66896a67654256815f88df57
+  languageName: node
+  linkType: hard
+
 "@csstools/css-parser-algorithms@npm:^2.6.3":
   version: 2.6.3
   resolution: "@csstools/css-parser-algorithms@npm:2.6.3"
@@ -2745,6 +2752,15 @@ __metadata:
   version: 2.0.2
   resolution: "@humanwhocodes/object-schema@npm:2.0.2"
   checksum: 10c0/6fd83dc320231d71c4541d0244051df61f301817e9f9da9fd4cb7e44ec8aacbde5958c1665b0c419401ab935114fdf532a6ad5d4e7294b1af2f347dd91a6983f
+  languageName: node
+  linkType: hard
+
+"@icons-pack/react-simple-icons@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@icons-pack/react-simple-icons@npm:9.6.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18
+  checksum: 10c0/b774e7bb8a0351be6794178ac045d2892e00b768ba18a2735ab37cd760541b604e12fb1462ad7d28b3d7f4631d1831096f6b7086cb17b6af6db89e40d0e8c004
   languageName: node
   linkType: hard
 
@@ -12333,6 +12349,7 @@ __metadata:
   resolution: "mantine-next-template@workspace:."
   dependencies:
     "@babel/core": "npm:^7.24.7"
+    "@icons-pack/react-simple-icons": "npm:^9.6.0"
     "@mantine/core": "npm:7.11.0"
     "@mantine/hooks": "npm:7.11.0"
     "@next/bundle-analyzer": "npm:^14.2.4"
@@ -12374,6 +12391,7 @@ __metadata:
     prettier: "npm:^3.3.2"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
+    react-icon-cloud: "npm:^4.1.4"
     storybook: "npm:^8.1.10"
     storybook-dark-mode: "npm:^4.0.2"
     stylelint: "npm:^16.6.1"
@@ -14240,6 +14258,17 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: 10c0/0d60a0ea758529c32a706d0c69d70b69fb94de3c46442fffdee34f08f51ffceddbb5395b41dfd1565895653e9f60f98ca525835be9d5db1f16d6b22be12f4cd4
+  languageName: node
+  linkType: hard
+
+"react-icon-cloud@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "react-icon-cloud@npm:4.1.4"
+  dependencies:
+    "@csstools/convert-colors": "npm:^2.0.0"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/4420cbc502fd58ba264e5d8e330880ceb0fbcfe2a06acb4e54f37b4516d59580f5ae2dc4bca511f50f50e54ac61de4ff99825b337905026cabd9d00fac00c56e
   languageName: node
   linkType: hard
 
