@@ -43,17 +43,17 @@ export function Header() {
   ));
   return (
     <div className={classes.inner}>
-      <Group className={classes.links}>
-        <ActionIcon
-          variant="outline"
-          color={dark ? 'yellow' : 'blue'}
-          onClick={() => toggleColorScheme()}
-          title="Toggle color scheme"
-        >
-          {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
-        </ActionIcon>
-      </Group>
       <Group gap="xs" justify="flex-end">
+        <Group className={classes.links}>
+          <ActionIcon
+            variant="outline"
+            color={dark ? 'yellow' : 'blue'}
+            onClick={() => toggleColorScheme()}
+            title="Toggle color scheme"
+          >
+            {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
+          </ActionIcon>
+        </Group>
         {items}
       </Group>
     </div>

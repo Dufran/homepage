@@ -1,24 +1,29 @@
-import { Box, Grid, MultiSelect, Title } from '@mantine/core';
+import { Grid, MultiSelect, Center, Title } from '@mantine/core';
+import dynamic from 'next/dynamic';
 import { coaxSkills, planeksSkills, sebnSkills } from './vars';
-import SkillCloud from '@/components/SkillCloud';
 
+const SkillCloud = dynamic(() => import('@/components/SkillCloud'), { ssr: false });
 export default function SkillMatcher() {
   const allSkills = sebnSkills.concat(coaxSkills, planeksSkills);
   return (
-    <Box>
-      <Grid>
-        <Grid.Col span={4}>
-          <MultiSelect
-            mb="md"
-            label={<Title>Search desirable skill</Title>}
-            searchable
-            data={allSkills.map((skill) => skill.label)}
-          />
+    <>
+      <Title m="lg" ta="center" order={3}>
+        Skills
+      </Title>
+      <Grid p="sm">
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Center>
+            <MultiSelect
+              label="Search desirable skills"
+              searchable
+              data={allSkills.map((skill) => skill.label)}
+            />
+          </Center>
         </Grid.Col>
-        <Grid.Col span={8}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <SkillCloud />
         </Grid.Col>
       </Grid>
-    </Box>
+    </>
   );
 }

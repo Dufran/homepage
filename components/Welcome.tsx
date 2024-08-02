@@ -1,4 +1,4 @@
-import { Text, Container, Title } from '@mantine/core';
+import { Container, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
 import { UserInfo } from './UserInfo';
 import TimelineInfo from './TimelineInfo';
@@ -7,29 +7,13 @@ import SkillMatcher from './SkillMatcher';
 
 export function Welcome() {
   return (
-    <Container px={30}>
+    <Container fluid px="md">
       <Header />
       <Title order={1} ta="left" className={classes.title} mt={20}>
-        Hello, I am a fullstack developer based in
-        <Text
-          px={10}
-          inherit
-          component="span"
-          variant="gradient"
-          gradient={{ from: 'indigo', to: 'rgba(255, 238, 0, 1)', deg: 0 }}
-        >
-          Ukraine
-        </Text>
-      </Title>
-
-      <Title mt={20} order={2}>
-        About me
+        Hello, I am a fullstack developer based in Ukraine
       </Title>
       <UserInfo />
       <SkillMatcher />
-      <Title mb={20} order={2}>
-        Software development timeline
-      </Title>
       <TimelineInfo />
     </Container>
   );
