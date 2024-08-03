@@ -2,11 +2,14 @@ import '@mantine/core/styles.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { theme } from '../theme';
+import '@mantine/notifications/styles.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
+      <Notifications />
       <Head>
         <meta name="description" content="Oleksandr Korol homepage" />
         <meta name="author" content="Oleksandr Korol" />

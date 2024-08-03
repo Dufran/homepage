@@ -1,13 +1,13 @@
-import { Card, Text, Group, Badge, Image, Grid, List, ListItem } from '@mantine/core';
+import { Text, Group, Badge, Image, Grid, Box } from '@mantine/core';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import img from '../public/profile.jpg';
-import { domains } from './vars';
+import img from '@/public/profile.jpg';
+import { domains } from '../vars';
 
 export function UserInfo() {
   dayjs.extend(relativeTime);
   return (
-    <Card radius="md">
+    <Box>
       <Grid>
         <Grid.Col span={9}>
           <Text ta="center" fw={500} mt="sm">
@@ -66,6 +66,6 @@ export function UserInfo() {
           <Image src={img.src} radius="md" alt="Oleksandr Korol" />
         </Grid.Col>
       </Grid>
-    </Card>
+    </Box>
   );
 }

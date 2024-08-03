@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cloud, renderSimpleIcon, fetchSimpleIcons } from 'react-icon-cloud';
-import { coaxSkills, planeksSkills, sebnSkills, tools } from './vars';
+import { coaxSkills, planeksSkills, sebnSkills, tools } from '../vars';
 
 interface Icons {
   icon: string;

@@ -23,6 +23,7 @@
     "@icons-pack/react-simple-icons": "^9.6.0",
     "@mantine/core": "7.11.2",
     "@mantine/hooks": "7.11.2",
+    "@mantine/notifications": "^7.11.2",
     "@next/bundle-analyzer": "^14.2.5",
     "@tabler/icons-react": "^3.11.0",
     "dayjs": "^1.11.12",

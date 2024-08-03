@@ -3,7 +3,7 @@ import { Timeline, Title, Text, Badge, Group, Box } from '@mantine/core';
 import { IconBriefcaseFilled } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { coaxSkills, planeksSkills, sebnSkills } from './vars';
+import { coaxSkills, planeksSkills, sebnSkills } from '../vars';
 
 export default function TimelineInfo() {
   dayjs.extend(relativeTime);
