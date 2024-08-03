@@ -22,31 +22,37 @@ export function UserInfo() {
           <Text p="sm" ta="left">
             English B2, Ukrainian Native speaker
           </Text>
-          <Text p="sm" ta="left" fw={800}>
-            Commercial experience:{' '}
-          </Text>
-          <Group justify="center">
-            <Badge size="lg" circle>
-              {dayjs().diff(dayjs('2020-02-01'), 'month')}
-            </Badge>
-            months or
-            <Badge size="lg" circle>
-              ~{dayjs().diff(dayjs('2020-02-01'), 'years')}{' '}
-            </Badge>
-            years
+          <Group>
+            <Text p="sm" ta="left" fw={800}>
+              Experience:
+            </Text>
+            <span>
+              <Badge size="lg" circle>
+                {dayjs().diff(dayjs('2020-02-01'), 'month')}
+              </Badge>
+              months
+            </span>
+            <b>or</b>
+            <span>
+              <Badge size="lg" circle>
+                ~{dayjs().diff(dayjs('2020-02-01'), 'years')}{' '}
+              </Badge>
+              years
+            </span>
           </Group>
-          <Text p="sm" ta="left" fw={800}>
-            Commercial projects:{' '}
-          </Text>
-          <Group justify="center">
+          <Group>
+            <Text p="sm" ta="left" fw={800}>
+              Commercial projects:
+            </Text>
             <Badge size="lg" circle>
               14
             </Badge>
           </Group>
+          <Group justify="left"></Group>
           <Text p="sm" ta="left" fw={800}>
             Domains worked in:
           </Text>
-          <Group gap="xs">
+          <Group gap={2}>
             {domains.map((domain) => (
               <Badge size="md" key={domain}>
                 {domain}
