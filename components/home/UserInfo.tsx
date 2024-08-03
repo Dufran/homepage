@@ -9,15 +9,20 @@ export function UserInfo() {
   return (
     <Box>
       <Grid>
-        <Grid.Col span={9}>
-          <Text ta="center" fw={500} mt="sm">
-            Oleksandr Korol: Fullstack Developer
+        <Grid.Col span={{ base: 12, md: 9 }}>
+          <Text p="sm" ta="left" fw={800}>
+            Role:
           </Text>
-          <Text p="sm" ta="center" fw={800}>
+          <Text p="sm" ta="left">
+            Fullstack Developer
+          </Text>
+          <Text p="sm" ta="left" fw={800}>
             Languages:
           </Text>
-          <Text ta="center"> English B2, Ukrainian Native speaker</Text>
-          <Text p="sm" ta="center" fw={800}>
+          <Text p="sm" ta="left">
+            English B2, Ukrainian Native speaker
+          </Text>
+          <Text p="sm" ta="left" fw={800}>
             Commercial experience:{' '}
           </Text>
           <Group justify="center">
@@ -30,7 +35,7 @@ export function UserInfo() {
             </Badge>
             years
           </Group>
-          <Text p="sm" ta="center" fw={800}>
+          <Text p="sm" ta="left" fw={800}>
             Commercial projects:{' '}
           </Text>
           <Group justify="center">
@@ -38,7 +43,7 @@ export function UserInfo() {
               14
             </Badge>
           </Group>
-          <Text p="sm" ta="center" fw={800}>
+          <Text p="sm" ta="left" fw={800}>
             Domains worked in:
           </Text>
           <Group gap="xs">
@@ -48,7 +53,7 @@ export function UserInfo() {
               </Badge>
             ))}
           </Group>
-          <Text p="sm" ta="center" fw={800}>
+          <Text p="sm" ta="left" fw={800}>
             Summary
           </Text>
           <Text size="md">
@@ -62,7 +67,7 @@ export function UserInfo() {
             delivering high-quality solutions
           </Text>
         </Grid.Col>
-        <Grid.Col span={3} visibleFrom="xs">
+        <Grid.Col span={{ base: 12, md: 3 }} visibleFrom="xs">
           <Image src={img.src} radius="md" alt="Oleksandr Korol" />
         </Grid.Col>
       </Grid>
