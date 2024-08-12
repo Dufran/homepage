@@ -27,14 +27,14 @@ export function UserInfo() {
               Experience:
             </Text>
             <span>
-              <Badge size="lg" circle>
+              <Badge size="lg" mr="md" circle>
                 {dayjs().diff(dayjs('2020-02-01'), 'month')}
               </Badge>
               months
             </span>
             <b>or</b>
             <span>
-              <Badge size="lg" circle>
+              <Badge size="lg" mr="md" circle>
                 ~{dayjs().diff(dayjs('2020-02-01'), 'years')}{' '}
               </Badge>
               years

@@ -1,4 +1,4 @@
-import { Group, useMantineColorScheme, ActionIcon, Box } from '@mantine/core';
+import { Group, useMantineColorScheme, ActionIcon, Box, Tooltip } from '@mantine/core';
 import {
   Icon,
   IconBrandGithub,
@@ -36,9 +36,11 @@ export function Header() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme;
   const items = SocialLinks.map((link) => (
-    <ActionIcon key={link.label}>
-      <link.icon key={link.label} href={link.url} onClick={() => window.open(link.url)} />
-    </ActionIcon>
+    <Tooltip key={link.label} label={`${link.label}`}>
+      <ActionIcon key={link.label}>
+        <link.icon key={link.label} href={link.url} onClick={() => window.open(link.url)} />
+      </ActionIcon>
+    </Tooltip>
   ));
   return (
     <Box p="md">
