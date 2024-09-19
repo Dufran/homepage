@@ -3,7 +3,11 @@ type skill = {
   label: string;
   adopted?: Date;
 };
-
+type project = {
+  name: string;
+  start: Date;
+  end: Date;
+};
 export const sebnSkills: skill[] = [
   { icon: 'php', label: 'PhP' },
   { icon: 'laravel', label: 'Laravel' },
@@ -129,4 +133,78 @@ export const domains: string[] = [
   'Logistics',
   'Telecom',
   'Real Estate',
+];
+
+export const sebnProjects: project[] = [
+  { name: 'Acpv client', start: new Date('2020-02-02'), end: new Date('2021-03-31') },
+  { name: 'SysAid Reporter', start: new Date('2020-09-02'), end: new Date('2021-08-30') },
+  { name: 'Stock Tracking', start: new Date('2020-09-02'), end: new Date('2022-05-30') },
+  { name: 'Production API', start: new Date('2021-03-02'), end: new Date('2021-10-30') },
+  {
+    name: 'Blocked Assemblies Checker',
+    start: new Date('2021-04-01'),
+    end: new Date('2021-04-30'),
+  },
+  {
+    name: 'Workplace Instructions Manager',
+    start: new Date('2021-05-02'),
+    end: new Date('2021-09-30'),
+  },
+  { name: 'Material Requests Manager', start: new Date('2021-01-01'), end: new Date('2022-05-30') },
+];
+
+export const coaxProjects: project[] = [
+  {
+    name: 'Net Worth Tracker',
+    start: new Date('2022-06-01'),
+    end: new Date('2022-12-30'),
+  },
+  {
+    name: 'Mental health/lifestyle platform',
+    start: new Date('2022-12-31'),
+    end: new Date('2023-11-30'),
+  },
+  {
+    name: 'Antique Seller CRM/Shop',
+    start: new Date('2022-12-31'),
+    end: new Date('2023-11-30'),
+  },
+  {
+    name: 'Github repo analyzer',
+    start: new Date('2023-09-31'),
+    end: new Date('2023-11-30'),
+  },
+];
+
+export const planeksProjects: project[] = [
+  {
+    name: 'Property listing automation',
+    start: new Date('2023-11-31'),
+    end: new Date('2024-02-30'),
+  },
+  {
+    name: 'Fulfillment portal',
+    start: new Date('2024-02-30'),
+    end: new Date('2024-05-30'),
+  },
+  {
+    name: 'Insurance collection website',
+    start: new Date('2024-04-01'),
+    end: new Date('2024-04-30'),
+  },
+  {
+    name: 'Customs portal',
+    start: new Date('2024-05-01'),
+    end: new Date('2024-07-30'),
+  },
+  {
+    name: 'AI search platform',
+    start: new Date('2024-06-27'),
+    end: new Date('2024-07-30'),
+  },
+  {
+    name: 'API for drugs and investments',
+    start: new Date('2024-08-05'),
+    end: new Date('2024-09-30'),
+  },
 ];

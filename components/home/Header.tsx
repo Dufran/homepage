@@ -1,4 +1,4 @@
-import { Group, useMantineColorScheme, ActionIcon, Box, Tooltip } from '@mantine/core';
+import { Group, useMantineColorScheme, ActionIcon, Tooltip, Anchor } from '@mantine/core';
 import {
   Icon,
   IconBrandGithub,
@@ -43,7 +43,11 @@ export function Header() {
     </Tooltip>
   ));
   return (
-    <Box p="md">
+    <Group justify="space-between" p="sm">
+      <Group>
+        <Anchor<'a'> href="/hobbies">Hobbies</Anchor>
+        <Anchor<'a'> href="/projects">Projects</Anchor>
+      </Group>
       <Group justify="end">
         {items}
         <ActionIcon
@@ -55,6 +59,6 @@ export function Header() {
           {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
         </ActionIcon>
       </Group>
-    </Box>
+    </Group>
   );
 }

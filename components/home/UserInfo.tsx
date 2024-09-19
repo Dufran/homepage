@@ -2,7 +2,7 @@ import { Text, Group, Badge, Image, Grid, Box } from '@mantine/core';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import img from '@/public/profile.jpg';
-import { domains } from '../vars';
+import { coaxProjects, domains, planeksProjects, sebnProjects } from '../vars';
 
 export function UserInfo() {
   dayjs.extend(relativeTime);
@@ -45,7 +45,7 @@ export function UserInfo() {
               Commercial projects:
             </Text>
             <Badge size="lg" circle>
-              14
+              {coaxProjects.length + sebnProjects.length + planeksProjects.length}
             </Badge>
           </Group>
           <Group justify="left"></Group>
