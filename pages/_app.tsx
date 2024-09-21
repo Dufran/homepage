@@ -19,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="og:title" content="Oleksandr Korol" />
         <meta property="og:type" content="website" />
         <title>Oleksandr Korol - Homepage</title>
-        <title>Oleksandr Korol</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"

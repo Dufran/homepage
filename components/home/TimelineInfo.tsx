@@ -1,15 +1,15 @@
 import React from 'react';
-import { Timeline, Title, Text, Badge, Group, Box, Grid } from '@mantine/core';
+import { Timeline, Title, Text, Badge, Group, Grid, Container } from '@mantine/core';
 import { IconBriefcaseFilled } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { coaxProjects, planeksProjects, sebnProjects } from '../vars';
 
-export default function TimelineInfo() {
-  dayjs.extend(relativeTime);
+dayjs.extend(relativeTime);
 
+export default function TimelineInfo() {
   return (
-    <Box>
+    <Container>
       <Title m="lg" ta="center" order={3}>
         Work experience
       </Title>
@@ -116,6 +116,6 @@ export default function TimelineInfo() {
           </Grid>
         </Timeline.Item>
       </Timeline>
-    </Box>
+    </Container>
   );
 }
