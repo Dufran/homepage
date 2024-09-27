@@ -207,4 +207,7 @@ export const planeksProjects: project[] = [
     start: new Date('2024-08-05'),
     end: new Date('2024-09-30'),
   },
+{ name: 'Warehouse access control system',
+start: new Date('2024-09-23'),
+end: new Date('2024-10-30'),}
 ];
