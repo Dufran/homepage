@@ -22,6 +22,7 @@
   font-weight: 800;
   text-align: center;
   padding-bottom: var(--mantine-spacing-xs);
+  padding-top: var(--mantine-spacing-xs);
 }
 
 .info {
