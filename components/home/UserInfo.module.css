@@ -1,0 +1,29 @@
+.card {
+  background-color: var(--mantine-color-body);
+}
+
+.avatar {
+  border: rem(2px) solid var(--mantine-color-body);
+}
+
+.feature {
+  font-weight: 800;
+  text-align: left;
+  padding: var(--mantine-spacing-xs);
+}
+
+.infoContainer {
+  vertical-align: middle;
+  line-height: 90px;
+  height: 100%;
+}
+
+.infoTitle {
+  font-weight: 800;
+  text-align: center;
+  padding-bottom: var(--mantine-spacing-xs);
+}
+
+.info {
+  text-align: left;
+}

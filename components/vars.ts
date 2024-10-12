@@ -1,3 +1,11 @@
+import {
+  Icon,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+  IconReportAnalytics,
+} from '@tabler/icons-react';
+
 type skill = {
   icon?: string;
   label: string;
@@ -8,6 +16,30 @@ type project = {
   start: Date;
   end: Date;
 };
+
+type SocialLink = {
+  label: string;
+  url: string;
+  icon: Icon;
+};
+export const SocialLinks: SocialLink[] = [
+  { label: 'Coding stats', icon: IconReportAnalytics, url: 'https://wakatime.com/@Dufran' },
+  {
+    label: 'LinkedIn',
+    icon: IconBrandLinkedin,
+    url: 'https://www.linkedin.com/in/oleksandr-korol/',
+  },
+  {
+    icon: IconBrandGithub,
+    label: 'Github',
+    url: 'https://github.com/Dufran',
+  },
+  {
+    icon: IconMail,
+    label: 'Contact',
+    url: 'mailto:korol.oleksandr.work@gmail.com',
+  },
+];
 export const sebnSkills: skill[] = [
   { icon: 'php', label: 'PhP' },
   { icon: 'laravel', label: 'Laravel' },
@@ -207,7 +239,9 @@ export const planeksProjects: project[] = [
     start: new Date('2024-08-05'),
     end: new Date('2024-09-30'),
   },
-{ name: 'Warehouse access control system',
-start: new Date('2024-09-23'),
-end: new Date('2024-10-30'),}
+  {
+    name: 'Warehouse access control system',
+    start: new Date('2024-09-23'),
+    end: new Date('2024-10-30'),
+  },
 ];
