@@ -107,7 +107,7 @@ export function UserInfo() {
         </Card>
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Text className={classes.infoTitle}>Fullstack Developer |Django|FastAPI|React</Text>
+        <Text className={classes.infoTitle}>Fullstack Developer Django|FastAPI|React</Text>
         <Box className={classes.infoContainer}>
           <Text className={classes.info}>
             Experienced in designing and implementing scalable web applications using modern

@@ -3,7 +3,8 @@ services:
     container_name: homepage
     build:
       context: .
-    command: yarn start
+      dockerfile: docker/Dockerfile
+    command: serve
     env_file:
       - .env
     ports:
