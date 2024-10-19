@@ -111,14 +111,16 @@ export function UserInfo() {
         <Box className={classes.infoContainer}>
           <Text className={classes.info}>
             Experienced in designing and implementing scalable web applications using modern
-            frameworks like Django, FastAPI, and React. Recognized for adaptability, accountability,
-            and problem-solving skills, with a proven track record of delivering backend solutions
-            that align with project goals and industry best practices.
+            frameworks like Django, FastAPI, and React,automation tools using python/Selenium.
+            Recognized for adaptability, accountability, and problem-solving skills, with a proven
+            track record of delivering backend solutions that align with project goals and industry
+            best practices.
           </Text>
           <Text className={classes.infoTitle}>Recognized for</Text>
           <List>
             <List.Item p="sm" icon={<IconApi style={{ width: rem(16), height: rem(16) }} />}>
-              Backend development, with a focus on performance optimization and security.
+              Backend development, with a focus on performance optimization,unit testing, and
+              security
             </List.Item>
             <List.Item p="sm" icon={<IconBrandReact style={{ width: rem(16), height: rem(16) }} />}>
               Constructing user-friendly interfaces using React, incorporating modern design. Walk
