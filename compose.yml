@@ -15,7 +15,8 @@ services:
     env_file:
       - .env
     ports:
-      - '${SERVICE_PORT:-443}:443'
+      - '${SERVICE_PORT_HTTPS:-443}:443'
+      - '${SERVICE_PORT_HTTP:-80}:80'
     volumes:
       - caddy_data:/data
       - caddy_config:/config
