@@ -1,11 +1,27 @@
 services:
-  homepage:
-    container_name: homepage
+  frontend:
+    container_name: ${COMPOSE_PROJECT_NAME}-frontend
+    restart: unless-stopped
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/frontend/Dockerfile
     command: serve
     env_file:
       - .env
+  caddy:
+    container_name: ${COMPOSE_PROJECT_NAME}-caddy
+    restart: unless-stopped
+    image: caddy:2.7.6
+    env_file:
+      - .env
     ports:
-      - '${SERVICE_PORT}:3000'
+      - '${SERVICE_PORT:-443}:443'
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - frontend
+volumes:
+  caddy_data:
+  caddy_config:

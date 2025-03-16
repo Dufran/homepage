@@ -1,0 +1,5 @@
+{$SITE_URL} {
+	handle {
+		reverse_proxy fe:3000
+	}
+}
