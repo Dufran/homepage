@@ -129,6 +129,7 @@ type SkillLabel =
   | 'PhP'
   | 'Laravel'
   | 'JS'
+  | 'R2 Storage'
   | 'CSS'
   | 'HTML'
   | 'DHCP'
@@ -233,7 +234,10 @@ type SkillLabel =
   | 'Warp'
   | 'Figma'
   | 'MacOS'
-  | 'Obsidian';
+  | 'Obsidian'
+  | 'MJML'
+  | 'SFTP'
+  | 'XML';
 
 type Skill = {
   icon?: SkillIcon;
@@ -330,6 +334,8 @@ export const planeksSkills: Skill[] = [
   { icon: 'htmx', label: 'HTMX' },
   { label: 'djlint' },
   { label: 'xml' },
+  { label: 'R2 Storage' },
+  { label: 'SFTP' },
   { icon: 'leaflet', label: 'Leaflet' },
   { label: 'Hyperscript' },
   { label: 'OAuth2' },
@@ -583,6 +589,52 @@ export const coaxProjects: project[] = [
 
 export const planeksProjects: project[] = [
   {
+    name: 'ExactOnline custom API integration',
+    domain: 'Logistics',
+    technologies: [
+      { label: 'Django', icon: 'django' },
+      { label: 'DRF', icon: 'django' },
+      { icon: 'react', label: 'React' },
+      { icon: 'redux', label: 'Redux' },
+      { icon: 'mantine', label: 'Mantine UI' },
+      { label: 'i18next' },
+      { label: 'Github Actions', icon: 'githubactions' },
+      { label: 'R2 Storage' },
+      { icon: 'pydantic', label: 'Pydantic' },
+      { icon: 'celery', label: 'Celery' },
+      { label: 'MJML' },
+      { icon: 'caddy', label: 'Caddy' },
+      { icon: 'redis', label: 'Redis' },
+      { icon: 'postgresql', label: 'PostgreSQL' },
+    ],
+    description:
+      'End user portal with custom API integration for ExactOnline and external ERP system. Includes user friendly UI for validating data from xls spreadsheets, and robust background API integration with ExactOnline and external ERP system. The platform also features a custom email template engine for sending notifications to users, ensuring seamless communication and data management.',
+    start: new Date('2025-15-19'),
+    end: new Date('2025-06-19'),
+  },
+  {
+    name: 'Logistics insight platform',
+    domain: 'Logistics',
+    technologies: [
+      { label: 'Django', icon: 'django' },
+      { label: 'DRF', icon: 'django' },
+      { icon: 'react', label: 'React' },
+      { icon: 'redux', label: 'Redux' },
+      { icon: 'mantine', label: 'Mantine UI' },
+      { label: 'i18next' },
+      { label: 'R2 Storage' },
+      { label: 'Github Actions', icon: 'githubactions' },
+      { icon: 'celery', label: 'Celery' },
+      { icon: 'caddy', label: 'Caddy' },
+      { icon: 'redis', label: 'Redis' },
+      { icon: 'postgresql', label: 'PostgreSQL' },
+    ],
+    description:
+      'The Logistics Insight Platform is a comprehensive web application designed to provide clients with detailed insights into their logistics operations. It features a user-friendly interface that allows users to view and analyze various aspects of their logistics processes, including shipment tracking, inventory management, and performance metrics. The platform integrates seamlessly with third-party services to enhance functionality and provide real-time data updates, ensuring that clients have access to the most accurate and up-to-date information regarding their logistics operations.',
+    start: new Date('2024-12-05'),
+    end: new Date('2025-05-31'),
+  },
+  {
     name: 'Warehouse access control system',
     domain: 'Logistics',
     technologies: [
@@ -634,7 +686,7 @@ export const planeksProjects: project[] = [
       { icon: 'mongodb', label: 'MongoDB' },
     ],
     description:
-      'Gosset AI is a biotech intelligence platform that consolidates information on drugs and companies, providing users with valuable insights into the current landscape of the biotech industry.',
+      'AI is a biotech intelligence platform that consolidates information on drugs and companies, providing users with valuable insights into the current landscape of the biotech industry.',
     start: new Date('2024-08-05'),
     end: new Date('2024-09-30'),
   },
@@ -646,6 +698,8 @@ export const planeksProjects: project[] = [
       { icon: 'bootstrap', label: 'Bootstrap' },
       { icon: 'htmx', label: 'HTMX' },
       { icon: 'digitalocean', label: 'Digital Ocean' },
+      { label: 'SFTP' },
+      { label: 'XML' },
       { icon: 'caddy', label: 'Caddy' },
       { icon: 'redis', label: 'Redis' },
       { icon: 'postgresql', label: 'PostgreSQL' },

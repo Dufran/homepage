@@ -11,7 +11,7 @@ services:
   caddy:
     container_name: ${COMPOSE_PROJECT_NAME}-caddy
     restart: unless-stopped
-    image: caddy:2.7.6
+    image: caddy:2.10
     env_file:
       - .env
     ports:

@@ -1,17 +1,3 @@
-import {
-  Text,
-  Group,
-  Badge,
-  Grid,
-  Card,
-  Avatar,
-  Stack,
-  Tooltip,
-  Box,
-  List,
-  rem,
-  NavLink,
-} from '@mantine/core';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import {
@@ -22,6 +8,20 @@ import {
   IconServer,
   IconUsersGroup,
 } from '@tabler/icons-react';
+import {
+  Avatar,
+  Badge,
+  Box,
+  Card,
+  Grid,
+  Group,
+  List,
+  NavLink,
+  rem,
+  Stack,
+  Text,
+  Tooltip,
+} from '@mantine/core';
 import img from '@/public/profile.jpg';
 import { coaxProjects, domains, planeksProjects, sebnProjects, SocialLinks } from '../vars';
 import classes from './UserInfo.module.css';
@@ -39,7 +39,7 @@ export function UserInfo() {
   return (
     <Grid p="md">
       <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Card withBorder padding="xl" radius="md" className={classes.card}>
+        <Card withBorder h="100%" padding="xl" radius="md" className={classes.card}>
           <Group>
             <Avatar
               src={img.src}
@@ -94,10 +94,10 @@ export function UserInfo() {
           </Group>
           <Card.Section>
             <NavLink
-              w="80%"
+              w="100%"
               p="md"
               m="auto"
-              label="Related links"
+              label="Would You Like To Know More?"
               childrenOffset={28}
               leftSection={<IconLink size="1rem" stroke={1.5} />}
             >

@@ -1,8 +1,8 @@
-import { Grid, MultiSelect, Center, Title } from '@mantine/core';
-import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import { notifications } from '@mantine/notifications';
+import dynamic from 'next/dynamic';
 import { IconClearAll } from '@tabler/icons-react';
+import { Center, Grid, MultiSelect, Title } from '@mantine/core';
+import { notifications } from '@mantine/notifications';
 import { coaxSkills, planeksSkills, sebnSkills } from '../vars';
 
 const SkillCloud = dynamic(() => import('@/components/home/SkillCloud'), { ssr: false });
