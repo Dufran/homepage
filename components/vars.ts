@@ -125,7 +125,7 @@ type SkillIcon =
   | 'macos'
   | 'obsidian';
 
-type SkillLabel =
+export type SkillLabel =
   | 'PhP'
   | 'Laravel'
   | 'JS'
@@ -506,6 +506,7 @@ export const coaxProjects: project[] = [
       { icon: 'amazonec2', label: 'AWS EC2' },
       { icon: 'amazonsqs', label: 'AWS SQS' },
       { icon: 'nginx', label: 'Nginx' },
+      { label: 'Celery' },
       { icon: 'redis', label: 'Redis' },
       { icon: 'postgresql', label: 'PostgreSQL' },
     ],
@@ -530,6 +531,7 @@ export const coaxProjects: project[] = [
       { icon: 'pandas', label: 'Pandas' },
       { icon: 'amazonec2', label: 'AWS EC2' },
       { icon: 'amazonsqs', label: 'AWS SQS' },
+      { label: 'Celery' },
       { icon: 'nginx', label: 'Nginx' },
       { icon: 'redis', label: 'Redis' },
       { icon: 'postgresql', label: 'PostgreSQL' },
@@ -554,9 +556,6 @@ export const coaxProjects: project[] = [
       { icon: 'instagram', label: 'Instagram API' },
       { icon: 'pinterest', label: 'Pinterest API' },
       { label: 'Google Merchant API' },
-      { icon: 'sentry', label: 'Sentry' },
-      { icon: 'redis', label: 'Redis' },
-      { icon: 'postgresql', label: 'PostgreSQL' },
       { icon: 'sentry', label: 'Sentry' },
       { icon: 'react', label: 'React' },
       { icon: 'mui', label: 'Material UI' },
@@ -609,7 +608,7 @@ export const planeksProjects: project[] = [
     ],
     description:
       'End user portal with custom API integration for ExactOnline and external ERP system. Includes user friendly UI for validating data from xls spreadsheets, and robust background API integration with ExactOnline and external ERP system. The platform also features a custom email template engine for sending notifications to users, ensuring seamless communication and data management.',
-    start: new Date('2025-15-19'),
+    start: new Date('2025-05-19'),
     end: new Date('2025-06-19'),
   },
   {
@@ -619,6 +618,7 @@ export const planeksProjects: project[] = [
       { label: 'Django', icon: 'django' },
       { label: 'DRF', icon: 'django' },
       { icon: 'react', label: 'React' },
+      { label: 'React Router', icon: 'reactrouter' },
       { icon: 'redux', label: 'Redux' },
       { icon: 'mantine', label: 'Mantine UI' },
       { label: 'i18next' },
@@ -631,7 +631,7 @@ export const planeksProjects: project[] = [
     ],
     description:
       'The Logistics Insight Platform is a comprehensive web application designed to provide clients with detailed insights into their logistics operations. It features a user-friendly interface that allows users to view and analyze various aspects of their logistics processes, including shipment tracking, inventory management, and performance metrics. The platform integrates seamlessly with third-party services to enhance functionality and provide real-time data updates, ensuring that clients have access to the most accurate and up-to-date information regarding their logistics operations.',
-    start: new Date('2024-12-05'),
+    start: new Date('2024-12-06'),
     end: new Date('2025-05-31'),
   },
   {
@@ -641,6 +641,7 @@ export const planeksProjects: project[] = [
       { label: 'Django', icon: 'django' },
       { label: 'DRF', icon: 'django' },
       { icon: 'react', label: 'React' },
+      { label: 'React Router', icon: 'reactrouter' },
       { icon: 'redux', label: 'Redux' },
       { icon: 'mantine', label: 'Mantine UI' },
       { label: 'i18next' },
@@ -700,6 +701,7 @@ export const planeksProjects: project[] = [
       { icon: 'digitalocean', label: 'Digital Ocean' },
       { label: 'SFTP' },
       { label: 'XML' },
+      { label: 'Celery' },
       { icon: 'caddy', label: 'Caddy' },
       { icon: 'redis', label: 'Redis' },
       { icon: 'postgresql', label: 'PostgreSQL' },
@@ -715,6 +717,7 @@ export const planeksProjects: project[] = [
     technologies: [
       { label: 'Django', icon: 'django' },
       { icon: 'bootstrap', label: 'Bootstrap' },
+      { label: 'Celery' },
       { icon: 'htmx', label: 'HTMX' },
       { icon: 'digitalocean', label: 'Digital Ocean' },
       { icon: 'caddy', label: 'Caddy' },
