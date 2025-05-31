@@ -1,0 +1,61 @@
+name: Release
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: homelab-arc-runner-set
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v3
+        with:
+          config: cliff.toml
+          args: --verbose
+        env:
+          OUTPUT: CHANGELOG.md
+          GITHUB_REPO: ${{ github.repository }}
+      - name: Commit changelog
+        run: |
+          git checkout main
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          set +e
+          git add CHANGELOG.md
+          git commit -m "Update changelog"
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff
+        with:
+          config: cliff.toml
+          args: -vv --latest
+        env:
+          OUTPUT: CHANGES.md
+          GITHUB_REPO: ${{ github.repository }}
+      - name: Update release notes
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          body: ${{ steps.git-cliff.outputs.content }}
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Notify Slack release channel
+        uses: rtCamp/action-slack-notify@v2.3.0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: 'New version released ${{ github.event.release.tag_name }}'
+          SLACK_MESSAGE: ${{ steps.git-cliff.outputs.content }}
+          SLACK_FOOTER: ''
+          SLACKIFY_MARKDOWN: true
+          MSG_MINIMAL: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true

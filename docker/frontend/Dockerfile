@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:22-slim
 WORKDIR /frontend
 COPY ./package.json ./yarn.lock ./.yarnrc.yml ./
 COPY ./.yarn/releases/yarn-*.cjs  ./.yarn/releases/

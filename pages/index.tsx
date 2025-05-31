@@ -1,4 +1,4 @@
-import { Container, Title, Image, Group, Tooltip } from '@mantine/core';
+import { Container, Group, Image, Title, Tooltip } from '@mantine/core';
 import { Header } from '@/components/home/Header';
 import SkillMatcher from '@/components/home/SkillMatcher';
 import TimelineInfo from '@/components/home/TimelineInfo';

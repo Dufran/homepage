@@ -1,6 +1,6 @@
-import { Group, useMantineColorScheme, ActionIcon, Anchor, Box } from '@mantine/core';
-import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import { usePathname } from 'next/navigation';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
+import { ActionIcon, Anchor, Box, Group, useMantineColorScheme } from '@mantine/core';
 import classes from './Header.module.css';
 
 const links = [

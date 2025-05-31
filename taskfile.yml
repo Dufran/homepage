@@ -1,8 +1,12 @@
-version: "3"
+version: '3'
+
 tasks:
-  deploy:
+  prod.deploy:
     cmds:
       - git pull
       - docker compose build
       - docker compose up -d
       - docker system prune -f
+  dev.lint:
+    cmds:
+      - git pull

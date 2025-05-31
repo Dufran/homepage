@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card, Group, Text, Badge, Grid, Container, Title, Select } from '@mantine/core';
 import dayjs from 'dayjs';
+import React from 'react';
+import { Badge, Card, Container, Grid, Group, Select, Text, Title } from '@mantine/core';
 import { coaxProjects, Domain, planeksProjects, sebnProjects } from '../vars';
 
 export default function ProjectList() {
