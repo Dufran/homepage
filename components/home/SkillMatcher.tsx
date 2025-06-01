@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { IconClearAll } from '@tabler/icons-react';
-import { Center, Grid, MultiSelect, Title } from '@mantine/core';
+import { Center, Container, MultiSelect, Title } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { coaxSkills, planeksSkills, sebnSkills } from '../vars';
 
@@ -65,27 +65,24 @@ export default function SkillMatcher() {
       <Title m="lg" ta="center" order={3}>
         Skills
       </Title>
-      <Grid p="sm">
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Center maw={400} h="100%">
-            <MultiSelect
-              label="Search desirable skills"
-              searchable
-              rightSection={<IconClearAll onClick={() => setValue([])} />}
-              rightSectionPointerEvents="all"
-              value={value}
-              hidePickedOptions
-              description="Search and select skills to see what match it's is"
-              onChange={setValue}
-              comboboxProps={{ transitionProps: { transition: 'pop', duration: 200 } }}
-              data={allSkills.map((skill) => skill.label)}
-            />
-          </Center>
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
+      <Container mx="auto">
+        <MultiSelect
+          label="Search desirable skills"
+          mb="md"
+          searchable
+          rightSection={<IconClearAll onClick={() => setValue([])} />}
+          rightSectionPointerEvents="all"
+          value={value}
+          hidePickedOptions
+          description="Search and select skills to see what match it's is"
+          onChange={setValue}
+          comboboxProps={{ transitionProps: { transition: 'pop', duration: 200 } }}
+          data={allSkills.map((skill) => skill.label)}
+        />
+        <Center>
           <SkillCloud />
-        </Grid.Col>
-      </Grid>
+        </Center>
+      </Container>
     </>
   );
 }

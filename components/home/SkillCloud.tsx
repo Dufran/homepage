@@ -1,5 +1,6 @@
 import React from 'react';
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from 'react-icon-cloud';
+import { notifications } from '@mantine/notifications';
 import { coaxSkills, planeksSkills, sebnSkills, tools } from '../vars';
 
 interface Icons {
@@ -22,9 +23,15 @@ const useIcons = () => {
     return Object.values(icons.simpleIcons).map((icon) =>
       renderSimpleIcon({
         icon,
-        size: 50,
+        size: 45,
         aProps: {
-          onClick: (e: any) => e.preventDefault(),
+          onClick: (e: any) => {
+            e.preventDefault();
+            notifications.show({
+              message: `${e.target.title}.`,
+              autoClose: 2000,
+            });
+          },
         },
       })
     );

@@ -5,7 +5,10 @@ import {
   IconBrandReact,
   IconLink,
   IconProgressCheck,
+  IconRobot,
   IconServer,
+  IconTrendingUp,
+  IconUserCheck,
   IconUsersGroup,
 } from '@tabler/icons-react';
 import {
@@ -100,37 +103,56 @@ export function UserInfo() {
         </Card>
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Text className={classes.infoTitle}>Fullstack Developer Django|FastAPI|React</Text>
+        <Text className={classes.infoTitle}>Fullstack Python/JavaScript Developer</Text>
         <Box className={classes.infoContainer}>
           <Text className={classes.info}>
             Experienced in designing and implementing scalable web applications using modern
-            frameworks like Django, FastAPI, and React,automation tools using python/Selenium.
-            Recognized for adaptability, accountability, and problem-solving skills, with a proven
-            track record of delivering backend solutions that align with project goals and industry
-            best practices.
+            frameworks such as Django, FastAPI, and React. Known for adaptability, accountability,
+            and strong problem-solving abilities, with a proven track record of delivering robust
+            solutions aligned with project goals and industry best practices. Brings a strong
+            product-oriented mindset and thrives in dynamic startup environments, with extensive
+            experience building projects from the ground up.
+          </Text>
+          <Text className={classes.info} pt="xs">
+            Driven by time efficiency — if part of a workflow can be automated, I’ll automate it
+            using the best available tools. This helps free up time for what I enjoy most: writing
+            clean, effective code to solve real business challenges.
           </Text>
           <Text className={classes.infoTitle}>Recognized for</Text>
           <List>
             <List.Item p="sm" icon={<IconApi style={{ width: rem(16), height: rem(16) }} />}>
-              Backend development, with a focus on performance optimization,unit testing, and
-              security
+              Expertise in backend development with a strong focus on performance optimization, unit
+              testing, and security
             </List.Item>
             <List.Item p="sm" icon={<IconBrandReact style={{ width: rem(16), height: rem(16) }} />}>
-              Constructing user-friendly interfaces using React, incorporating modern design. Walk
-              the end user shoes and suggest improvements on the spot.
+              Building intuitive, user-friendly interfaces with React, always considering the
+              end-user experience and suggesting improvements on the spot
             </List.Item>
             <List.Item p="sm" icon={<IconServer style={{ width: rem(16), height: rem(16) }} />}>
-              Deep knowledge of unix OS, deployment, and server management. Also self-hosting
-              homelab enthusiast
+              Deep knowledge of Unix-based systems, deployment workflows, and server management —
+              also a homelab and self-hosting enthusiast
             </List.Item>
             <List.Item p="sm" icon={<IconUsersGroup style={{ width: rem(16), height: rem(16) }} />}>
-              Collaborating with cross-functional teams to deliver high-quality software solutions
+              Effective collaboration with cross-functional teams to deliver high-quality software
+              solutions
             </List.Item>
             <List.Item
               p="sm"
               icon={<IconProgressCheck style={{ width: rem(16), height: rem(16) }} />}
             >
-              Organizational skills, with a proven track record of managing project tasks
+              Strong organizational skills with a history of managing project tasks efficiently
+            </List.Item>
+            <List.Item p="sm" icon={<IconTrendingUp style={{ width: rem(16), height: rem(16) }} />}>
+              Continuously staying informed about emerging technologies and trends, and proactively
+              identifying the best tools and practices to improve productivity and software quality
+            </List.Item>
+            <List.Item p="sm" icon={<IconUserCheck style={{ width: rem(16), height: rem(16) }} />}>
+              A product-first approach: consistently aligning development decisions with business
+              goals and end-user needs
+            </List.Item>
+            <List.Item p="sm" icon={<IconRobot style={{ width: rem(16), height: rem(16) }} />}>
+              Time-conscious and automation-focused, reducing manual overhead in favor of spending
+              more time solving meaningful business problems with code
             </List.Item>
           </List>
         </Box>

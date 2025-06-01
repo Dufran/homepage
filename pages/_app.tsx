@@ -6,6 +6,8 @@ import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { theme } from '../theme';
 
+import '@mantine/notifications/styles.css';
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
