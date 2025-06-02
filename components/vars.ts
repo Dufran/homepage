@@ -2,12 +2,38 @@ import {
   Icon,
   IconBrandGithub,
   IconBrandLinkedin,
+  IconChefHat,
+  IconHeadset,
   IconMail,
   IconMusic,
   IconReportAnalytics,
+  IconServer,
   IconStar,
 } from '@tabler/icons-react';
 
+type Hobby = {
+  name: string;
+  icon?: Icon;
+  description?: string;
+};
+export const hobbies: Hobby[] = [
+  {
+    name: 'AudioBooks',
+    icon: IconHeadset,
+    description:
+      'I enjoy listening to audiobooks on various topics, especially science fiction and fantasy',
+  },
+  {
+    name: 'Cooking',
+    icon: IconChefHat,
+    description: 'Love cooking for family and experimenting with new recipes in my free time',
+  },
+  {
+    name: 'Homelab/Self hosting',
+    icon: IconServer,
+    description: 'As a tech nerd, I occasionally set up and maintain my own homelab',
+  },
+];
 type project = {
   name: string;
   description?: string;

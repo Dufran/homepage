@@ -13,7 +13,10 @@
       "file": ".github/copilot-commit-message-instructions.md"
     }
   ],
-  "cSpell.words": ["Webshop"],
+  "cSpell.words": [
+    "Homelab",
+    "Webshop"
+  ],
   "eslint.workingDirectories": ["./"],
   "python.analysis.autoImportCompletions": true,
   "python.analysis.extraPaths": ["${workspaceFolder}/backend", "${workspaceFolder}/backend/.venv/"],
