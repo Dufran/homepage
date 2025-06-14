@@ -1,18 +1,18 @@
-import { usePathname } from 'next/navigation';
-import { IconMoonStars, IconSun } from '@tabler/icons-react';
-import { ActionIcon, Anchor, Box, Group, useMantineColorScheme } from '@mantine/core';
-import classes from './Header.module.css';
+import { usePathname } from 'next/navigation'
+import { IconMoonStars, IconSun } from '@tabler/icons-react'
+import { ActionIcon, Anchor, Box, Group, useMantineColorScheme } from '@mantine/core'
+import classes from './Header.module.css'
 
 const links = [
   { link: '/', label: 'Home' },
   { link: '/projects', label: 'Projects' },
   { link: '/hobbies', label: 'Hobbies' },
-];
+]
 
 export function Header() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme;
-  const location = usePathname();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const dark = colorScheme
+  const location = usePathname()
   const items = links.map((link) => (
     <Anchor
       key={link.label}
@@ -22,7 +22,7 @@ export function Header() {
     >
       {link.label}
     </Anchor>
-  ));
+  ))
   return (
     <Box>
       <Group justify="space-between" p="sm">
@@ -39,5 +39,5 @@ export function Header() {
         </Group>
       </Group>
     </Box>
-  );
+  )
 }

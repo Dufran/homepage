@@ -1,10 +1,10 @@
-import { Container, Group, Image, Title, Tooltip } from '@mantine/core';
-import { Header } from '@/components/home/Header';
-import SkillMatcher from '@/components/home/SkillMatcher';
-import TimelineInfo from '@/components/home/TimelineInfo';
-import { UserInfo } from '@/components/home/UserInfo';
-import kenobi from '@/public/kenobi.webp';
-import classes from './index.module.css';
+import { Container, Group, Image, Title, Tooltip } from '@mantine/core'
+import { Header } from '@/components/home/Header'
+import SkillMatcher from '@/components/home/SkillMatcher'
+import TimelineInfo from '@/components/home/TimelineInfo'
+import { UserInfo } from '@/components/home/UserInfo'
+import kenobi from '@/public/kenobi.webp'
+import classes from './index.module.css'
 
 export default function HomePage() {
   return (
@@ -25,5 +25,5 @@ export default function HomePage() {
       <SkillMatcher />
       <TimelineInfo />
     </Container>
-  );
+  )
 }

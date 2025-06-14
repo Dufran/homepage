@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import React, { useMemo, useState } from 'react';
-import { Container, Grid, Group, MultiSelect, Title } from '@mantine/core';
-import { coaxProjects, Domain, planeksProjects, sebnProjects, SkillLabel } from '../vars';
-import { ProjectItem } from './ProjectItem';
+import dayjs from 'dayjs'
+import React, { useMemo, useState } from 'react'
+import { Container, Grid, Group, MultiSelect, Title } from '@mantine/core'
+import { coaxProjects, Domain, planeksProjects, sebnProjects, SkillLabel } from '../vars'
+import { ProjectItem } from './ProjectItem'
 
 export default function ProjectList() {
-  const allProjects = planeksProjects.concat(coaxProjects, sebnProjects);
+  const allProjects = planeksProjects.concat(coaxProjects, sebnProjects)
 
   // Unique domains
   const domains = Array.from(
@@ -14,31 +14,30 @@ export default function ProjectList() {
         .map((project) => project.domain)
         .filter((domain): domain is Domain => domain !== undefined)
     )
-  );
+  )
 
   // Unique technologies
   const technologies = Array.from(
     new Set(allProjects.flatMap((project) => project.technologies?.map((t) => t.label) ?? []))
-  );
+  )
 
   // State for filters
-  const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
-  const [selectedTechnologies, setSelectedTechnologies] = useState<SkillLabel[]>([]);
+  const [selectedDomains, setSelectedDomains] = useState<string[]>([])
+  const [selectedTechnologies, setSelectedTechnologies] = useState<SkillLabel[]>([])
 
   const filteredProjects = useMemo(() => {
     return allProjects.filter((project) => {
       // Domain filter
       const domainMatch =
-        selectedDomains.length === 0 ||
-        (project.domain && selectedDomains.includes(project.domain));
+        selectedDomains.length === 0 || (project.domain && selectedDomains.includes(project.domain))
       // Technology filter
-      const techLabels = project.technologies?.map((t) => t.label) ?? [];
+      const techLabels = project.technologies?.map((t) => t.label) ?? []
       const techMatch =
         selectedTechnologies.length === 0 ||
-        selectedTechnologies.every((tech) => techLabels.includes(tech));
-      return domainMatch && techMatch;
-    });
-  }, [allProjects, selectedDomains, selectedTechnologies]);
+        selectedTechnologies.every((tech) => techLabels.includes(tech))
+      return domainMatch && techMatch
+    })
+  }, [allProjects, selectedDomains, selectedTechnologies])
   return (
     <Container fluid>
       <Title ta="center" order={3}>
@@ -79,5 +78,5 @@ export default function ProjectList() {
         ))}
       </Grid>
     </Container>
-  );
+  )
 }

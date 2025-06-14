@@ -1,5 +1,5 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import {
   IconApi,
   IconBrandReact,
@@ -10,7 +10,7 @@ import {
   IconTrendingUp,
   IconUserCheck,
   IconUsersGroup,
-} from '@tabler/icons-react';
+} from '@tabler/icons-react'
 import {
   Avatar,
   Badge,
@@ -24,12 +24,12 @@ import {
   Stack,
   Text,
   Tooltip,
-} from '@mantine/core';
-import img from '@/public/profile.jpg';
-import { coaxProjects, domains, planeksProjects, sebnProjects, SocialLinks } from '../vars';
-import classes from './UserInfo.module.css';
+} from '@mantine/core'
+import img from '@/public/profile.jpg'
+import { coaxProjects, domains, planeksProjects, sebnProjects, SocialLinks } from '../vars'
+import classes from './UserInfo.module.css'
 
-dayjs.extend(relativeTime);
+dayjs.extend(relativeTime)
 export function UserInfo() {
   const items = SocialLinks.map((link) => (
     <NavLink
@@ -38,7 +38,7 @@ export function UserInfo() {
       label={link.label}
       leftSection={<link.icon key={link.label} onClick={() => window.open(link.url)} />}
     />
-  ));
+  ))
   return (
     <Grid p="md">
       <Grid.Col span={{ base: 12, sm: 6 }}>
@@ -158,5 +158,5 @@ export function UserInfo() {
         </Box>
       </Grid.Col>
     </Grid>
-  );
+  )
 }

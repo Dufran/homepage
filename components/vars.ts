@@ -2,26 +2,52 @@ import {
   Icon,
   IconBrandGithub,
   IconBrandLinkedin,
+  IconChefHat,
+  IconHeadset,
   IconMail,
   IconMusic,
   IconReportAnalytics,
+  IconServer,
   IconStar,
-} from '@tabler/icons-react';
+} from '@tabler/icons-react'
 
+type Hobby = {
+  name: string
+  icon?: Icon
+  description?: string
+}
+export const hobbies: Hobby[] = [
+  {
+    name: 'AudioBooks',
+    icon: IconHeadset,
+    description:
+      'I enjoy listening to audiobooks on various topics, especially science fiction and fantasy',
+  },
+  {
+    name: 'Cooking',
+    icon: IconChefHat,
+    description: 'Love cooking for family and experimenting with new recipes in my free time',
+  },
+  {
+    name: 'Homelab/Self hosting',
+    icon: IconServer,
+    description: 'As a tech nerd, I occasionally set up and maintain my own homelab',
+  },
+]
 type project = {
-  name: string;
-  description?: string;
-  start: Date;
-  end: Date;
-  domain?: Domain;
-  technologies?: Skill[];
-};
+  name: string
+  description?: string
+  start: Date
+  end: Date
+  domain?: Domain
+  technologies?: Skill[]
+}
 
 type SocialLink = {
-  label: string;
-  url: string;
-  icon: Icon;
-};
+  label: string
+  url: string
+  icon: Icon
+}
 export const SocialLinks: SocialLink[] = [
   { label: 'Coding stats', icon: IconReportAnalytics, url: 'https://wakatime.com/@Dufran' },
   {
@@ -45,7 +71,7 @@ export const SocialLinks: SocialLink[] = [
     label: 'Contact',
     url: 'mailto:korol.oleksandr.work@gmail.com',
   },
-];
+]
 type SkillIcon =
   | 'algolia'
   | 'amazonec2'
@@ -140,7 +166,7 @@ type SkillIcon =
   | 'vite'
   | 'warp'
   | 'xml'
-  | 'yarn';
+  | 'yarn'
 
 export type SkillLabel =
   | 'Active Directory'
@@ -261,13 +287,13 @@ export type SkillLabel =
   | 'XML'
   | 'Yahoo Finance API'
   | 'Yarn'
-  | "Let's Encrypt";
+  | "Let's Encrypt"
 
 type Skill = {
-  icon?: SkillIcon;
-  label: SkillLabel;
-  adopted?: Date;
-};
+  icon?: SkillIcon
+  label: SkillLabel
+  adopted?: Date
+}
 
 export const sebnSkills: Skill[] = [
   { icon: 'php', label: 'PhP' },
@@ -296,7 +322,7 @@ export const sebnSkills: Skill[] = [
   { icon: 'reactrouter', label: 'React Router' },
   { icon: 'redux', label: 'Redux' },
   { icon: 'mui', label: 'Material UI' },
-];
+]
 
 export const coaxSkills: Skill[] = [
   { icon: 'fastapi', label: 'FastAPI' },
@@ -343,7 +369,7 @@ export const coaxSkills: Skill[] = [
   { label: 'AWS SNS' },
   { icon: 'amazonelasticache', label: 'AWS ElastiCache' },
   { icon: 'elasticsearch', label: 'Elasticsearch' },
-];
+]
 
 export const planeksSkills: Skill[] = [
   { icon: 'selenium', label: 'Selenium' },
@@ -370,7 +396,7 @@ export const planeksSkills: Skill[] = [
   { icon: 'bootstrap', label: 'Bootstrap' },
   { icon: 'mantine', label: 'Mantine UI' },
   { icon: 'trello', label: 'Trello' },
-];
+]
 
 export const tools: Skill[] = [
   { icon: 'git', label: 'Git' },
@@ -388,7 +414,7 @@ export const tools: Skill[] = [
   { icon: 'figma', label: 'Figma' },
   { icon: 'macos', label: 'MacOS' },
   { icon: 'obsidian', label: 'Obsidian' },
-];
+]
 
 export type Domain =
   | 'Healthcare'
@@ -398,7 +424,7 @@ export type Domain =
   | 'Manufacturing'
   | 'Logistics'
   | 'Telecom'
-  | 'Real Estate';
+  | 'Real Estate'
 export const domains: Domain[] = [
   'Healthcare',
   'Fintech',
@@ -408,7 +434,7 @@ export const domains: Domain[] = [
   'Logistics',
   'Telecom',
   'Real Estate',
-];
+]
 
 export const sebnProjects: project[] = [
   {
@@ -518,7 +544,7 @@ export const sebnProjects: project[] = [
     start: new Date('2021-01-01'),
     end: new Date('2022-05-30'),
   },
-];
+]
 
 export const coaxProjects: project[] = [
   {
@@ -611,7 +637,7 @@ export const coaxProjects: project[] = [
     start: new Date('2023-09-31'),
     end: new Date('2023-11-30'),
   },
-];
+]
 
 export const planeksProjects: project[] = [
   {
@@ -790,4 +816,4 @@ export const planeksProjects: project[] = [
     start: new Date('2023-11-31'),
     end: new Date('2024-02-30'),
   },
-];
+]

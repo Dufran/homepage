@@ -1,7 +1,7 @@
-import React from 'react';
-import { Container } from '@mantine/core';
-import { Header } from '@/components/home/Header';
-import ProjectList from '@/components/projects/ProjectList';
+import React from 'react'
+import { Container } from '@mantine/core'
+import { Header } from '@/components/home/Header'
+import ProjectList from '@/components/projects/ProjectList'
 
 export default function ProjectsPage() {
   return (
@@ -9,5 +9,5 @@ export default function ProjectsPage() {
       <Header />
       <ProjectList />
     </Container>
-  );
+  )
 }

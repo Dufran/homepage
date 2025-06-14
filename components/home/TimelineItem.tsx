@@ -1,18 +1,18 @@
-import dayjs from 'dayjs';
-import React from 'react';
-import { IconBriefcaseFilled } from '@tabler/icons-react';
-import { Badge, Grid, Group, Text, Timeline } from '@mantine/core';
+import dayjs from 'dayjs'
+import React from 'react'
+import { IconBriefcaseFilled } from '@tabler/icons-react'
+import { Badge, Grid, Group, Text, Timeline } from '@mantine/core'
 
 type ExperienceTimelineItemProps = {
-  company: string;
-  badgeGradient?: { from: string; to: string; deg?: number };
-  jobTitle: string;
-  projectsCount: number;
-  start: string;
-  end?: string;
-  description: React.ReactNode;
-  icon?: React.ReactNode;
-};
+  company: string
+  badgeGradient?: { from: string; to: string; deg?: number }
+  jobTitle: string
+  projectsCount: number
+  start: string
+  end?: string
+  description: React.ReactNode
+  icon?: React.ReactNode
+}
 
 export default function ExperienceTimelineItem({
   company,
@@ -24,10 +24,10 @@ export default function ExperienceTimelineItem({
   description,
   icon = <IconBriefcaseFilled size={12} />,
 }: ExperienceTimelineItemProps) {
-  const startDate = dayjs(start);
-  const endDate = end ? dayjs(end) : dayjs();
-  const months = endDate.diff(startDate, 'month');
-  const ago = dayjs().to(startDate, true);
+  const startDate = dayjs(start)
+  const endDate = end ? dayjs(end) : dayjs()
+  const months = endDate.diff(startDate, 'month')
+  const ago = dayjs().to(startDate, true)
 
   return (
     <Timeline.Item
@@ -57,5 +57,5 @@ export default function ExperienceTimelineItem({
         </Grid.Col>
       </Grid>
     </Timeline.Item>
-  );
+  )
 }
