@@ -1,12 +1,12 @@
-import '@mantine/core/styles.css';
+import '@mantine/core/styles.css'
 
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
-import { theme } from '../theme';
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
+import { theme } from '../theme'
 
-import '@mantine/notifications/styles.css';
+import '@mantine/notifications/styles.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -29,5 +29,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Component {...pageProps} />
     </MantineProvider>
-  );
+  )
 }

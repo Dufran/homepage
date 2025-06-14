@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-import React from 'react';
-import { IconCalendar } from '@tabler/icons-react';
-import { Badge, Card, Divider, Group, Stack, Text } from '@mantine/core';
+import dayjs from 'dayjs'
+import React from 'react'
+import { IconCalendar } from '@tabler/icons-react'
+import { Badge, Card, Divider, Group, Stack, Text } from '@mantine/core'
 
-type Technology = { label: string };
+type Technology = { label: string }
 type ProjectItemProps = {
-  name: string;
-  domain?: string;
-  start: string;
-  end?: string;
-  description?: string;
-  technologies?: Technology[];
-};
+  name: string
+  domain?: string
+  start: string
+  end?: string
+  description?: string
+  technologies?: Technology[]
+}
 
 export function ProjectItem({
   name,
@@ -29,8 +29,12 @@ export function ProjectItem({
       h="100%"
       withBorder
       style={{ transition: 'box-shadow 0.2s', cursor: 'pointer' }}
-      onMouseOver={(e) => (e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.10)')}
-      onMouseOut={(e) => (e.currentTarget.style.boxShadow = '')}
+      onMouseOver={(e) => {
+        e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.10)'
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.boxShadow = ''
+      }}
     >
       <Stack gap="xs">
         <Text fw={700} ta="center" size="lg">
@@ -76,5 +80,5 @@ export function ProjectItem({
         </Group>
       </Stack>
     </Card>
-  );
+  )
 }

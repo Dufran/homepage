@@ -1,12 +1,12 @@
 {
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
@@ -14,7 +14,6 @@
     }
   ],
   "cSpell.words": ["Webshop"],
-  "eslint.workingDirectories": ["./"],
   "python.analysis.autoImportCompletions": true,
   "python.analysis.extraPaths": ["${workspaceFolder}/backend", "${workspaceFolder}/backend/.venv/"],
   "python.analysis.include": ["./backend"],

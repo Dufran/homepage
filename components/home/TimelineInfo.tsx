@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import React from 'react';
-import { Container, Timeline, Title } from '@mantine/core';
-import { coaxProjects, planeksProjects, sebnProjects } from '../vars';
-import TimelineItem from './TimelineItem';
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import React from 'react'
+import { Container, Timeline, Title } from '@mantine/core'
+import { coaxProjects, planeksProjects, sebnProjects } from '../vars'
+import TimelineItem from './TimelineItem'
 
-dayjs.extend(relativeTime);
+dayjs.extend(relativeTime)
 
 export default function TimelineInfo() {
   return (
@@ -39,5 +39,5 @@ export default function TimelineInfo() {
         />
       </Timeline>
     </Container>
-  );
+  )
 }
