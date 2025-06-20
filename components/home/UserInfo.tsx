@@ -1,16 +1,3 @@
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-import {
-  IconApi,
-  IconBrandReact,
-  IconLink,
-  IconProgressCheck,
-  IconRobot,
-  IconServer,
-  IconTrendingUp,
-  IconUserCheck,
-  IconUsersGroup,
-} from '@tabler/icons-react'
 import {
   Avatar,
   Badge,
@@ -25,8 +12,21 @@ import {
   Text,
   Tooltip,
 } from '@mantine/core'
+import {
+  IconApi,
+  IconBrandReact,
+  IconLink,
+  IconProgressCheck,
+  IconRobot,
+  IconServer,
+  IconTrendingUp,
+  IconUserCheck,
+  IconUsersGroup,
+} from '@tabler/icons-react'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import img from '@/public/profile.jpg'
-import { coaxProjects, domains, planeksProjects, sebnProjects, SocialLinks } from '../vars'
+import { coaxProjects, domains, planeksProjects, SocialLinks, sebnProjects } from '../vars'
 import classes from './UserInfo.module.css'
 
 dayjs.extend(relativeTime)
@@ -42,7 +42,7 @@ export function UserInfo() {
   return (
     <Grid p="md">
       <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Card withBorder h="100%" padding="xl" radius="md" className={classes.card}>
+        <Card withBorder={true} h="100%" padding="xl" radius="md" className={classes.card}>
           <Group>
             <Avatar src={img.src} size={125} mx="auto" mt={-30} className={classes.avatar} />
             <Stack>

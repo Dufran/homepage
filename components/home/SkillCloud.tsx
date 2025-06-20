@@ -1,6 +1,6 @@
+import { notifications } from '@mantine/notifications'
 import React from 'react'
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from 'react-icon-cloud'
-import { notifications } from '@mantine/notifications'
 import { coaxSkills, planeksSkills, sebnSkills, tools } from '../vars'
 
 interface Icons {

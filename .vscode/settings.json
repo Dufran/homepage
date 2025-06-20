@@ -2,6 +2,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  // "biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },

@@ -1,9 +1,9 @@
 import '@mantine/core/styles.css'
 
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { theme } from '../theme'
 
 import '@mantine/notifications/styles.css'

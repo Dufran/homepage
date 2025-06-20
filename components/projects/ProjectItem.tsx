@@ -1,7 +1,7 @@
+import { Badge, Card, Divider, Group, Stack, Text } from '@mantine/core'
+import { IconCalendar } from '@tabler/icons-react'
 import dayjs from 'dayjs'
 import React from 'react'
-import { IconCalendar } from '@tabler/icons-react'
-import { Badge, Card, Divider, Group, Stack, Text } from '@mantine/core'
 
 type Technology = { label: string }
 type ProjectItemProps = {
@@ -27,7 +27,7 @@ export function ProjectItem({
       padding="lg"
       radius="md"
       h="100%"
-      withBorder
+      withBorder={true}
       style={{ transition: 'box-shadow 0.2s', cursor: 'pointer' }}
       onMouseOver={(e) => {
         e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.10)'

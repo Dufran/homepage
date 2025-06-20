@@ -1,7 +1,7 @@
+import { Badge, Grid, Group, Text, Timeline } from '@mantine/core'
+import { IconBriefcaseFilled } from '@tabler/icons-react'
 import dayjs from 'dayjs'
 import React from 'react'
-import { IconBriefcaseFilled } from '@tabler/icons-react'
-import { Badge, Grid, Group, Text, Timeline } from '@mantine/core'
 
 type ExperienceTimelineItemProps = {
   company: string

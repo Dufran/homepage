@@ -10,8 +10,8 @@
     "start": "next start",
     "export": "next build && next export",
     "typecheck": "tsc --noEmit",
-    "lint:read": "yarn biome lint && yarn biome format ",
-    "lint:fix": "yarn biome lint --fix && yarn biome format --write"
+    "lint:read": "yarn biome check ",
+    "lint:fix": "yarn biome check --fix"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.1.0",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.0",
     "@types/node": "^22.13.11",
     "@types/react": "19.0.12",
     "babel-loader": "^10.0.0",
