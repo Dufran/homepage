@@ -1,7 +1,6 @@
-import { ActionIcon, Anchor, Box, Group, useMantineColorScheme } from '@mantine/core'
+import { ActionIcon, Anchor, Box, Button, Group, useMantineColorScheme } from '@mantine/core'
 import { IconMoonStars, IconSun } from '@tabler/icons-react'
 import { usePathname } from 'next/navigation'
-import classes from './Header.module.css'
 
 const links = [
   { link: '/', label: 'Home' },
@@ -14,14 +13,14 @@ export function Header() {
   const dark = colorScheme
   const location = usePathname()
   const items = links.map((link) => (
-    <Anchor
+    <Button
+      component="a"
       key={link.label}
       href={link.link}
-      className={classes.link}
       data-active={link.link === location || undefined}
     >
       {link.label}
-    </Anchor>
+    </Button>
   ))
   return (
     <Box>
