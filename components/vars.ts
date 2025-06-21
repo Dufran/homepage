@@ -61,7 +61,7 @@ export const hobbies: Hobby[] = [
     name: '5S Adept',
     icon: IconVacuumCleaner,
     description:
-      'Thanks to a company with deep Japanese roots, I became a 5S convert. Clean, organized spaces keep my mind sharp and work efficient.',
+      'Picked up 5S principles at a previous job with strong Japanese roots. Since then, keeping spaces clean and organized has become second nature — it sharpens my focus and boosts efficiency.',
   },
 ]
 type project = {
