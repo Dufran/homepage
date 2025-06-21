@@ -13,12 +13,13 @@ const useIcons = () => {
     .concat(coaxSkills, planeksSkills, tools)
     .filter((skill) => skill.icon)
     .map((skill) => skill.icon)
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <fix> This effect only runs once on mount
   React.useEffect(() => {
     if (allSkills) {
       // @ts-ignore next-line
       fetchSimpleIcons({ slugs: allSkills }).then(setIcons)
     }
-  }, [allSkills])
+  }, [])
   if (icons) {
     return Object.values(icons.simpleIcons).map((icon) =>
       renderSimpleIcon({

@@ -3,6 +3,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconChefHat,
+  IconDeviceGamepad,
   IconDeviceTv,
   IconHeadset,
   IconMail,
@@ -62,6 +63,12 @@ export const hobbies: Hobby[] = [
     icon: IconVacuumCleaner,
     description:
       'Picked up 5S principles at a previous job with strong Japanese roots. Since then, keeping spaces clean and organized has become second nature — it sharpens my focus and boosts efficiency.',
+  },
+  {
+    name: 'Video Games',
+    icon: IconDeviceGamepad,
+    description:
+      'Gaming is my escape and inspiration — from narrative-rich RPGs to bone-crushing soulslike games.',
   },
 ]
 type project = {
@@ -845,5 +852,70 @@ export const planeksProjects: project[] = [
       'The Property Listing Automation tool is a powerful internal tool designed to enhance the analysis of the real estate market in the UK. It leverages a vast amount of data(For example 9 GB table with historical data for calculating KPI) from two of the most popular real estate websites, Zoopla and Rightmove, to provide comprehensive insights and automation capabilities(For example: Finding UK area with the lowest rent price for last 12 month, automatically generate offer price for all listings in this area code, and send offer to each of them)',
     start: new Date('2023-11-31'),
     end: new Date('2024-02-30'),
+  },
+]
+
+type AudioBookSeries = {
+  name: string
+  link?: string
+  description: string
+  total_count: number
+  current_count: number
+  current_book: string
+}
+
+export const audioBookSeries: AudioBookSeries[] = [
+  {
+    name: 'Warhammer 40K Horus Heresy',
+    link: 'https://www.amazon.com/The-Horus-Heresy-54-book-series/dp/B0CQ2PKBFW',
+    description:
+      'Let the galaxy burn! The Horus Heresy is a series of novels set in the Warhammer 40,000 universe, chronicling the events of the galaxy-spanning civil war that nearly destroyed',
+    total_count: 54,
+    current_count: 16,
+    current_book: 'Age of Darkness',
+  },
+  {
+    name: 'Eisenhorn',
+    link: 'https://www.amazon.com/s?k=Eisenhorn&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=eisenhorn%2Cdigital-text%2C184&ref=nb_sb_noss_2',
+    description:
+      'The Eisenhorn trilogy is a series of novels set in the Warhammer 40,000 universe, following the Inquisitor Gregor Eisenhorn as he battles heresy and corruption within the Imperium.',
+    total_count: 3,
+    current_count: 3,
+    current_book: 'Hereticus',
+  },
+  {
+    name: 'The Expanse',
+    link: 'https://www.amazon.com/s?k=The+expanse&i=digital-text&crid=30HCA7RBWZCF2&sprefix=the+expans%2Cdigital-text%2C241&ref=nb_sb_noss_2',
+    description:
+      'Mars, Earth, and the Asteroid Belt are the three main powers in a colonized solar system. The Expanse series follows a disparate band of antiheroes as they navigate political intrigue, alien technology, and the mysteries of the universe.',
+    total_count: 9,
+    current_count: 8,
+    current_book: 'Leviathan Falls',
+  },
+  {
+    name: 'Witcher',
+    link: 'https://www.amazon.com/s?k=The+Witcher&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=the+witcher%2Cdigital-text%2C184&ref=nb_sb_noss_2',
+    description:
+      'The Witcher series follows Geralt of Rivia, a monster hunter navigating a world filled with magic, political intrigue, and moral ambiguity.',
+    total_count: 9,
+    current_count: 3,
+    current_book: 'Time of Contempt',
+  },
+  {
+    name: 'Warhammer 40K Siege of Terra',
+    link: 'https://www.amazon.com/s?k=The+Horus+Heresy%3A+Siege+of+Terra&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=the+horus+heresy+siege+of+terra%2Cdigital-text%2C184&ref=nb_sb_noss_2',
+    description: 'The final chapter of the Horus Heresy, lay down foundation for the 40K setting',
+    total_count: 10,
+    current_count: 10,
+    current_book: 'The End and the Death Volume 3',
+  },
+  {
+    name: 'Song of Ice and Fire',
+    link: 'https://www.amazon.com/s?k=Song+of+Ice+and+Fire&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=song+of+ice+and+fire%2Cdigital-text%2C184&ref=nb_sb_noss_2',
+    description:
+      'A Song of Ice and Fire is a series of epic fantasy novels by American author George R. R. Martin, set in the fictional continents of Westeros and Essos.',
+    total_count: 7,
+    current_count: 1,
+    current_book: 'A Clash of Kings',
   },
 ]

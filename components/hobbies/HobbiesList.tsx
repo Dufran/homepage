@@ -1,21 +1,35 @@
-import { List } from '@mantine/core'
-import { hobbies } from '../vars'
+import { Tabs, Text } from '@mantine/core'
+import { hobbies } from '@/components/vars'
+import AudioBookItem from './AudioBookItem'
+import Playlist from './Playlist'
 
 export default function HobbiesList() {
   return (
-    <List>
+    <Tabs defaultValue={hobbies[0]?.name}>
+      <Tabs.List>
+        {hobbies.map((hobby) => (
+          <Tabs.Tab key={hobby.name} value={hobby.name} leftSection={<hobby.icon />}>
+            {hobby.name}
+          </Tabs.Tab>
+        ))}
+      </Tabs.List>
       {hobbies.map((hobby) => (
-        <List.Item
-          key={hobby.name}
-          icon={<hobby.icon />}
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          {hobby.name}
-          <List>
-            <List.Item>{hobby.description}</List.Item>
-          </List>
-        </List.Item>
+        <Tabs.Panel key={hobby.name} value={hobby.name}>
+          {hobby.name === 'Audiobooks' ? (
+            <div>
+              <Text ta='center'>{hobby.description}</Text>
+              <AudioBookItem />
+            </div>
+          ) : hobby.name === 'Music Listening' ? (
+            <div>
+              <Text ta='center'>{hobby.description}</Text>
+              <Playlist />
+            </div>
+          ) : (
+            <Text ta='center'>{hobby.description}</Text>
+          )}
+        </Tabs.Panel>
       ))}
-    </List>
+    </Tabs>
   )
 }
