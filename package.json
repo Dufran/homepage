@@ -11,7 +11,7 @@
     "export": "next build && next export",
     "typecheck": "tsc --noEmit",
     "lint:read": "yarn biome check ",
-    "lint:fix": "yarn biome check --fix"
+    "lint:fix": "yarn biome check --fix --unsafe"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.1.0",

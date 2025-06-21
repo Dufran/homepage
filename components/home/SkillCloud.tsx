@@ -18,7 +18,7 @@ const useIcons = () => {
       // @ts-ignore next-line
       fetchSimpleIcons({ slugs: allSkills }).then(setIcons)
     }
-  }, [])
+  }, [allSkills])
   if (icons) {
     return Object.values(icons.simpleIcons).map((icon) =>
       renderSimpleIcon({
@@ -40,10 +40,5 @@ const useIcons = () => {
 }
 export default function SkillCloud() {
   const icons = useIcons()
-  return (
-    <Cloud>
-      {icons}
-      <></>
-    </Cloud>
-  )
+  return <Cloud>{icons}</Cloud>
 }

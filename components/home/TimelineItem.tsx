@@ -1,7 +1,7 @@
 import { Badge, Grid, Group, Text, Timeline } from '@mantine/core'
 import { IconBriefcaseFilled } from '@tabler/icons-react'
 import dayjs from 'dayjs'
-import React from 'react'
+import type React from 'react'
 
 type ExperienceTimelineItemProps = {
   company: string
@@ -32,10 +32,10 @@ export default function ExperienceTimelineItem({
   return (
     <Timeline.Item
       bullet={icon}
-      lineVariant="dashed"
+      lineVariant='dashed'
       title={
         <Group>
-          <Badge size="xl" variant="gradient" gradient={badgeGradient}>
+          <Badge size='xl' variant='gradient' gradient={badgeGradient}>
             {company}
           </Badge>
         </Group>
@@ -46,14 +46,14 @@ export default function ExperienceTimelineItem({
           <Text fw={700}>{jobTitle}</Text>
           <Group>
             <Text p={2}>Projects done:</Text>
-            <Badge size="md">{projectsCount}</Badge>
+            <Badge size='md'>{projectsCount}</Badge>
           </Group>
-          <Text size="sm" mt={4}>
+          <Text size='sm' mt={4}>
             {ago} ago for {months} months
           </Text>
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 9 }}>
-          <Text size="md">{description}</Text>
+          <Text size='md'>{description}</Text>
         </Grid.Col>
       </Grid>
     </Timeline.Item>

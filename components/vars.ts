@@ -1,21 +1,17 @@
 import {
-  Icon,
+  type Icon,
   IconBrandGithub,
   IconBrandLinkedin,
   IconChefHat,
-  IconClearAll,
   IconDeviceTv,
   IconHeadset,
   IconMail,
   IconMusic,
-  IconPrinter,
   IconReportAnalytics,
-  IconRuler2,
   IconServer,
   IconStar,
   IconVacuumCleaner,
   IconVinyl,
-  IconWaveSawTool,
   IconWreckingBall,
 } from '@tabler/icons-react'
 
@@ -26,42 +22,46 @@ type Hobby = {
 }
 export const hobbies: Hobby[] = [
   {
-    name: 'AudioBooks',
+    name: 'Audiobooks',
     icon: IconHeadset,
     description:
-      'I enjoy listening to audiobooks on various topics, especially science fiction and fantasy',
+      'Big fan of audiobooks — especially when diving into sci-fi or fantasy worlds during a walk or commute.',
   },
   {
-    name: 'Movies/TV Shows',
+    name: 'Movies & TV Shows',
     icon: IconDeviceTv,
-    description: 'I enjoy watching movies and TV shows, especially sci-fi and fantasy genres',
+    description:
+      'From intergalactic adventures to gritty dystopias, I’m always up for a good sci-fi or fantasy binge.',
   },
   {
     name: 'Cooking',
     icon: IconChefHat,
-    description: 'Love cooking for family and experimenting with new recipes in my free time',
+    description:
+      'Nothing beats unwinding in the kitchen — whether it’s cooking for family or freestyling a new recipe.',
   },
   {
-    name: 'Homelab/Self hosting',
+    name: 'Homelab & Self-Hosting',
     icon: IconServer,
-    description: 'As a tech nerd, I occasionally set up and maintain my own homelab',
+    description:
+      'Tinkering with self-hosted tools and building a homelab scratches both my tech itch and curiosity.',
   },
   {
-    name: 'Repairing and maintenance',
+    name: 'Repair & Maintenance',
     icon: IconWreckingBall,
     description:
-      'Love to repair and maintain various devices, from electronics to household items, extended my skills to repairing toys that my son breaks',
+      'Fixing gadgets, reviving appliances, or bringing my son’s “battle-tested” toys back to life — it’s part challenge, part joy.',
   },
   {
     name: 'Music Listening',
     icon: IconVinyl,
-    description: 'Any genre can hook me up. Love to crank up the volume and fully dive into coding',
+    description:
+      'Whatever the genre, if it hits — it plays. Cranked-up music fuels my focus and coding flow.',
   },
   {
     name: '5S Adept',
     icon: IconVacuumCleaner,
     description:
-      'After working in a company with strong japanese roots, I became a 5S adept. I love to keep my workspace and any other thing that I mount/install organized and tidy, which helps me stay focused and efficient.',
+      'Thanks to a company with deep Japanese roots, I became a 5S convert. Clean, organized spaces keep my mind sharp and work efficient.',
   },
 ]
 type project = {

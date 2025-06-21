@@ -62,16 +62,16 @@ export default function SkillMatcher() {
 
   return (
     <>
-      <Title m="lg" ta="center" order={3}>
+      <Title m='lg' ta='center' order={3}>
         Skills
       </Title>
-      <Container mx="auto">
+      <Container mx='auto'>
         <MultiSelect
-          label="Search desirable skills"
-          mb="md"
+          label='Search desirable skills'
+          mb='md'
           searchable={true}
           rightSection={<IconClearAll onClick={() => setValue([])} />}
-          rightSectionPointerEvents="all"
+          rightSectionPointerEvents='all'
           value={value}
           hidePickedOptions={true}
           description="Search and select skills to see what match it's is"

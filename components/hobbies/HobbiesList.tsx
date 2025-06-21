@@ -1,5 +1,4 @@
 import { List } from '@mantine/core'
-import React from 'react'
 import { hobbies } from '../vars'
 
 export default function HobbiesList() {

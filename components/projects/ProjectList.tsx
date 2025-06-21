@@ -1,7 +1,7 @@
 import { Container, Grid, Group, MultiSelect, Title } from '@mantine/core'
 import dayjs from 'dayjs'
-import React, { useMemo, useState } from 'react'
-import { coaxProjects, Domain, planeksProjects, SkillLabel, sebnProjects } from '../vars'
+import { useMemo, useState } from 'react'
+import { coaxProjects, type Domain, planeksProjects, type SkillLabel, sebnProjects } from '../vars'
 import { ProjectItem } from './ProjectItem'
 
 export default function ProjectList() {
@@ -40,13 +40,13 @@ export default function ProjectList() {
   }, [allProjects, selectedDomains, selectedTechnologies])
   return (
     <Container fluid={true}>
-      <Title ta="center" order={3}>
+      <Title ta='center' order={3}>
         List of commercial projects
       </Title>
-      <Group p="md">
+      <Group p='md'>
         <MultiSelect
-          label="Technologies"
-          placeholder="Select technology"
+          label='Technologies'
+          placeholder='Select technology'
           searchable={true}
           clearable={true}
           data={technologies}
@@ -54,8 +54,8 @@ export default function ProjectList() {
           onChange={(value) => setSelectedTechnologies(value as SkillLabel[])}
         />
         <MultiSelect
-          label="Domains"
-          placeholder="Select domain"
+          label='Domains'
+          placeholder='Select domain'
           searchable={true}
           clearable={true}
           data={domains}

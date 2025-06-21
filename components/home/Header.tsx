@@ -1,4 +1,4 @@
-import { ActionIcon, Anchor, Box, Button, Group, useMantineColorScheme } from '@mantine/core'
+import { ActionIcon, Box, Button, Group, useMantineColorScheme } from '@mantine/core'
 import { IconMoonStars, IconSun } from '@tabler/icons-react'
 import { usePathname } from 'next/navigation'
 
@@ -14,7 +14,8 @@ export function Header() {
   const location = usePathname()
   const items = links.map((link) => (
     <Button
-      component="a"
+      p='xs'
+      component='a'
       key={link.label}
       href={link.link}
       data-active={link.link === location || undefined}
@@ -24,16 +25,16 @@ export function Header() {
   ))
   return (
     <Box>
-      <Group justify="space-between" p="sm">
+      <Group justify='space-between' p='sm'>
         <Group gap={5}>{items}</Group>
-        <Group justify="end">
+        <Group justify='end'>
           <ActionIcon
-            variant="outline"
+            variant='outline'
             color={dark ? 'yellow' : 'blue'}
             onClick={() => toggleColorScheme()}
-            title="Toggle color scheme"
+            title='Toggle color scheme'
           >
-            {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
+            {dark ? <IconSun size='1.1rem' /> : <IconMoonStars size='1.1rem' />}
           </ActionIcon>
         </Group>
       </Group>

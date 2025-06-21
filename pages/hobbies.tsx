@@ -4,7 +4,7 @@ import { Header } from '@/components/home/Header'
 
 export default function HobbiesPage() {
   return (
-    <Container fluid={true} px="md">
+    <Container fluid={true} px='md'>
       <Header />
       <HobbiesList />
     </Container>
