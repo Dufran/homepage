@@ -110,11 +110,13 @@ export const SocialLinks: SocialLink[] = [
   },
 ]
 type SkillIcon =
+  | 'adminer'
   | 'algolia'
   | 'amazonec2'
   | 'amazonelasticache'
   | 'amazonrds'
   | 'amazons3'
+  | 'biome'
   | 'amazonsqs'
   | 'antdesign'
   | 'awslambda'
@@ -131,6 +133,7 @@ type SkillIcon =
   | 'elasticsearch'
   | 'electron'
   | 'eslint'
+  | 'excalidraw'
   | 'facebook'
   | 'fastapi'
   | 'figma'
@@ -192,6 +195,7 @@ type SkillIcon =
   | 'sqlite'
   | 'stripe'
   | 'stylelint'
+  | 'slack'
   | 'swagger'
   | 'tailscale'
   | 'trello'
@@ -207,6 +211,7 @@ type SkillIcon =
 
 export type SkillLabel =
   | 'Active Directory'
+  | 'Adminer'
   | 'Algolia'
   | 'Ant Design'
   | 'AWS EC2'
@@ -217,6 +222,7 @@ export type SkillLabel =
   | 'AWS SNS'
   | 'AWS SQS'
   | 'Bootstrap'
+  | 'Biome'
   | 'Caddy'
   | 'Celery'
   | 'Cloudflare Zero Trust'
@@ -233,6 +239,7 @@ export type SkillLabel =
   | 'Elasticsearch'
   | 'Electron JS'
   | 'ESLint'
+  | 'Excalidraw'
   | 'Facebook API'
   | 'FastAPI'
   | 'Figma'
@@ -308,7 +315,8 @@ export type SkillLabel =
   | 'SQLite'
   | 'Stripe'
   | 'Stylelint'
-  | 'tailscale'
+  | 'Tailscale'
+  | 'Slack API'
   | 'Telegram API'
   | 'Tempo API'
   | 'Trello'
@@ -411,7 +419,7 @@ export const coaxSkills: Skill[] = [
 export const planeksSkills: Skill[] = [
   { icon: 'selenium', label: 'Selenium' },
   { icon: 'netdata', label: 'Netdata' },
-  { icon: 'tailscale', label: 'tailscale' },
+  { icon: 'tailscale', label: 'Tailscale' },
   { icon: 'caddy', label: 'Caddy' },
   { icon: 'hetzner', label: 'Hetzner Cloud' },
   { icon: 'letsencrypt', label: "Let's Encrypt" },
@@ -442,6 +450,7 @@ export const tools: Skill[] = [
   { icon: 'docker', label: 'Docker' },
   { label: 'VS Code' },
   { label: 'NPM' },
+  { label: 'Biome', icon: 'biome' },
   { icon: 'yarn', label: 'Yarn' },
   { icon: 'poetry', label: 'Poetry' },
   { label: 'Pyenv' },
