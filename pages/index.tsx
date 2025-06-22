@@ -8,11 +8,11 @@ import classes from './index.module.css'
 
 export default function HomePage() {
   return (
-    <Container fluid={true} px='lg'>
+    <Container fluid px='lg'>
       <Header />
       <Group justify='center' mt='xl'>
         <Tooltip
-          inline={true}
+          inline
           events={{ hover: true, focus: true, touch: true }}
           label={<Image src={kenobi.src} className={classes.kenobi} />}
         >

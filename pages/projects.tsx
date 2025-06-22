@@ -4,7 +4,7 @@ import ProjectList from '@/components/projects/ProjectList'
 
 export default function ProjectsPage() {
   return (
-    <Container fluid={true} px='md'>
+    <Container fluid px='md'>
       <Header />
       <ProjectList />
     </Container>

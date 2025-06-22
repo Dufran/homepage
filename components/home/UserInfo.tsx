@@ -42,7 +42,7 @@ export function UserInfo() {
   return (
     <Grid p='md'>
       <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Card withBorder={true} h='100%' padding='xl' radius='md' className={classes.card}>
+        <Card withBorder h='100%' padding='xl' radius='md' className={classes.card}>
           <Group>
             <Avatar src={img.src} size={125} mx='auto' mt={-30} className={classes.avatar} />
             <Stack>

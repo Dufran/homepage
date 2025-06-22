@@ -39,7 +39,7 @@ export default function ProjectList() {
     })
   }, [allProjects, selectedDomains, selectedTechnologies])
   return (
-    <Container fluid={true}>
+    <Container fluid>
       <Title ta='center' order={3}>
         List of commercial projects
       </Title>
@@ -47,8 +47,8 @@ export default function ProjectList() {
         <MultiSelect
           label='Technologies'
           placeholder='Select technology'
-          searchable={true}
-          clearable={true}
+          searchable
+          clearable
           data={technologies}
           value={selectedTechnologies}
           onChange={(value) => setSelectedTechnologies(value as SkillLabel[])}
@@ -56,8 +56,8 @@ export default function ProjectList() {
         <MultiSelect
           label='Domains'
           placeholder='Select domain'
-          searchable={true}
-          clearable={true}
+          searchable
+          clearable
           data={domains}
           value={selectedDomains}
           onChange={setSelectedDomains}

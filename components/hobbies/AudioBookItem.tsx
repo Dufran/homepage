@@ -17,7 +17,7 @@ export default function AudioBookItem() {
         const completed = series.current_count >= series.total_count
         const progress = Math.round((series.current_count / series.total_count) * 100)
         return (
-          <Card key={series.name} shadow='sm' padding='md' radius='md' withBorder={true}>
+          <Card key={series.name} shadow='sm' padding='md' radius='md' withBorder>
             <Group justify='space-between' align='center' mb='xs'>
               <Anchor href={series.link} target='_blank' fw={700} size='lg'>
                 {series.name}

@@ -69,11 +69,11 @@ export default function SkillMatcher() {
         <MultiSelect
           label='Search desirable skills'
           mb='md'
-          searchable={true}
+          searchable
           rightSection={<IconClearAll onClick={() => setValue([])} />}
           rightSectionPointerEvents='all'
           value={value}
-          hidePickedOptions={true}
+          hidePickedOptions
           description="Search and select skills to see what match it's is"
           onChange={setValue}
           comboboxProps={{ transitionProps: { transition: 'pop', duration: 200 } }}

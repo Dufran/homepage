@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.4/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": {
     "ignoreUnknown": false,
@@ -101,7 +101,7 @@
       "security": { "noBlankTarget": "error", "noGlobalEval": "warn" },
       "style": {
         "noCommonJs": "error",
-        "noImplicitBoolean": "error",
+        "noImplicitBoolean": "off",
         "noNamespace": "error",
         "noParameterAssign": "error",
         "noUselessElse": "error",
@@ -115,6 +115,7 @@
         "useDefaultSwitchClause": "off",
         "useExponentiationOperator": "error",
         "useFragmentSyntax": "error",
+        "noNonNullAssertion": "off",
         "useNamingConvention": {
           "level": "off",
           "options": { "strictCase": false, "requireAscii": false }
