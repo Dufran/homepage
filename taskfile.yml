@@ -9,4 +9,4 @@ tasks:
       - docker system prune -f
   dev.lint:
     cmds:
-      - git pull
+      - yarn run lint:fix

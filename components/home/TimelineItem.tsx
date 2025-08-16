@@ -16,7 +16,7 @@ type ExperienceTimelineItemProps = {
 
 export default function ExperienceTimelineItem({
   company,
-  badgeGradient = { from: 'blue', to: 'cyan', deg: 90 },
+  badgeGradient = { deg: 90, from: 'blue', to: 'cyan' },
   jobTitle,
   projectsCount,
   start,

@@ -27,7 +27,7 @@ export function ProjectItem({
       radius='md'
       h='100%'
       withBorder
-      style={{ transition: 'box-shadow 0.2s', cursor: 'pointer' }}
+      style={{ cursor: 'pointer', transition: 'box-shadow 0.2s' }}
       onMouseOver={(e) => {
         e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.10)'
       }}

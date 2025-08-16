@@ -1,16 +1,16 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "fe",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceRoot}",
-      "envFile": "${workspaceFolder}/.env",
-      "runtimeExecutable": "yarn",
-      "runtimeVersion": "22.13.0",
-      "runtimeArgs": ["run", "dev"],
-      "consoleTitle": "React"
-    }
-  ]
+	"configurations": [
+		{
+			"consoleTitle": "React",
+			"cwd": "${workspaceRoot}",
+			"envFile": "${workspaceFolder}/.env",
+			"name": "fe",
+			"request": "launch",
+			"runtimeArgs": ["run", "dev"],
+			"runtimeExecutable": "yarn",
+			"runtimeVersion": "22.13.0",
+			"type": "node"
+		}
+	],
+	"version": "0.2.0"
 }

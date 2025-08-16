@@ -57,7 +57,7 @@ export function UserInfo() {
           <Group justify='start'>
             <Text className={classes.feature}>Experience:</Text>
             <Tooltip
-              events={{ hover: true, focus: true, touch: true }}
+              events={{ focus: true, hover: true, touch: true }}
               label={`Or ${dayjs().diff(dayjs('2020-02-01'), 'month')} months`}
             >
               <Badge size='md' mr='md'>
@@ -120,37 +120,37 @@ export function UserInfo() {
           </Text>
           <Text className={classes.infoTitle}>Recognized for</Text>
           <List>
-            <List.Item p='sm' icon={<IconApi style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconApi style={{ height: rem(16), width: rem(16) }} />}>
               Expertise in backend development with a strong focus on performance optimization, unit
               testing, and security
             </List.Item>
-            <List.Item p='sm' icon={<IconBrandReact style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconBrandReact style={{ height: rem(16), width: rem(16) }} />}>
               Building intuitive, user-friendly interfaces with React, always considering the
               end-user experience and suggesting improvements on the spot
             </List.Item>
-            <List.Item p='sm' icon={<IconServer style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconServer style={{ height: rem(16), width: rem(16) }} />}>
               Deep knowledge of Unix-based systems, deployment workflows, and server management —
               also a homelab and self-hosting enthusiast
             </List.Item>
-            <List.Item p='sm' icon={<IconUsersGroup style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconUsersGroup style={{ height: rem(16), width: rem(16) }} />}>
               Effective collaboration with cross-functional teams to deliver high-quality software
               solutions
             </List.Item>
             <List.Item
               p='sm'
-              icon={<IconProgressCheck style={{ width: rem(16), height: rem(16) }} />}
+              icon={<IconProgressCheck style={{ height: rem(16), width: rem(16) }} />}
             >
               Strong organizational skills with a history of managing project tasks efficiently
             </List.Item>
-            <List.Item p='sm' icon={<IconTrendingUp style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconTrendingUp style={{ height: rem(16), width: rem(16) }} />}>
               Continuously staying informed about emerging technologies and trends, and proactively
               identifying the best tools and practices to improve productivity and software quality
             </List.Item>
-            <List.Item p='sm' icon={<IconUserCheck style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconUserCheck style={{ height: rem(16), width: rem(16) }} />}>
               A product-first approach: consistently aligning development decisions with business
               goals and end-user needs
             </List.Item>
-            <List.Item p='sm' icon={<IconRobot style={{ width: rem(16), height: rem(16) }} />}>
+            <List.Item p='sm' icon={<IconRobot style={{ height: rem(16), width: rem(16) }} />}>
               Time-conscious and automation-focused, reducing manual overhead in favor of spending
               more time solving meaningful business problems with code
             </List.Item>

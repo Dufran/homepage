@@ -1,41 +1,41 @@
 {
-  "name": "homepage - nextjs",
-  "description": "Homepage built with Next.js, Mantine, and TypeScript",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "analyze": "ANALYZE=true next build",
-    "start": "next start",
-    "export": "next build && next export",
-    "typecheck": "tsc --noEmit",
-    "lint:read": "yarn biome check ",
-    "lint:fix": "yarn biome check --fix --unsafe"
-  },
-  "dependencies": {
-    "@icons-pack/react-simple-icons": "^13.1.0",
-    "@mantine/core": "^8.1.0",
-    "@mantine/hooks": "^8.1.0",
-    "@mantine/notifications": "^8.1.0",
-    "@next/bundle-analyzer": "^15.3.3",
-    "@tabler/icons-react": "^3.31.0",
-    "dayjs": "^1.11.13",
-    "next": "15.3.3",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-icon-cloud": "^4.1.7"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.26.10",
-    "@biomejs/biome": "2.0.4",
-    "@types/node": "^22.13.11",
-    "@types/react": "19.0.12",
-    "babel-loader": "^10.0.0",
-    "postcss": "^8.5.3",
-    "postcss-preset-mantine": "1.17.0",
-    "postcss-simple-vars": "^7.0.1",
-    "typescript": "5.8.2"
-  },
-  "packageManager": "yarn@4.9.1"
+	"dependencies": {
+		"@icons-pack/react-simple-icons": "^13.1.0",
+		"@mantine/core": "^8.1.0",
+		"@mantine/hooks": "^8.1.0",
+		"@mantine/notifications": "^8.1.0",
+		"@next/bundle-analyzer": "^15.3.3",
+		"@tabler/icons-react": "^3.31.0",
+		"dayjs": "^1.11.13",
+		"next": "15.3.3",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-icon-cloud": "^4.1.7"
+	},
+	"description": "Homepage built with Next.js, Mantine, and TypeScript",
+	"devDependencies": {
+		"@babel/core": "^7.26.10",
+		"@biomejs/biome": "2.2.0",
+		"@types/node": "^22.13.11",
+		"@types/react": "19.0.12",
+		"babel-loader": "^10.0.0",
+		"postcss": "^8.5.3",
+		"postcss-preset-mantine": "1.17.0",
+		"postcss-simple-vars": "^7.0.1",
+		"typescript": "5.8.2"
+	},
+	"name": "homepage - nextjs",
+	"packageManager": "yarn@4.9.1",
+	"private": true,
+	"scripts": {
+		"analyze": "ANALYZE=true next build",
+		"build": "next build",
+		"dev": "next dev",
+		"export": "next build && next export",
+		"lint:fix": "yarn biome check --fix --unsafe",
+		"lint:read": "yarn biome check ",
+		"start": "next start",
+		"typecheck": "tsc --noEmit"
+	},
+	"version": "1.0.0"
 }

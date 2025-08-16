@@ -3,9 +3,9 @@ import { IconMoonStars, IconSun } from '@tabler/icons-react'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { link: '/', label: 'Home' },
-  { link: '/projects', label: 'Projects' },
-  { link: '/hobbies', label: 'Hobbies' },
+  { label: 'Home', link: '/' },
+  { label: 'Projects', link: '/projects' },
+  { label: 'Hobbies', link: '/hobbies' },
 ]
 
 export function Header() {

@@ -13,7 +13,7 @@ export default function HomePage() {
       <Group justify='center' mt='xl'>
         <Tooltip
           inline
-          events={{ hover: true, focus: true, touch: true }}
+          events={{ focus: true, hover: true, touch: true }}
           label={<Image src={kenobi.src} className={classes.kenobi} />}
         >
           <Title order={1} ta='left' mt={20}>

@@ -16,24 +16,24 @@ const useIcons = () => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: <fix> This effect only runs once on mount
   React.useEffect(() => {
     if (allSkills) {
-      // @ts-ignore next-line
+      // @ts-expect-error next-line
       fetchSimpleIcons({ slugs: allSkills }).then(setIcons)
     }
   }, [])
   if (icons) {
     return Object.values(icons.simpleIcons).map((icon) =>
       renderSimpleIcon({
-        icon,
-        size: 45,
         aProps: {
           onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
             e.preventDefault()
             notifications.show({
-              message: `${(e.target as HTMLElement).title}.`,
               autoClose: 2000,
+              message: `${(e.target as HTMLElement).title}.`,
             })
           },
         },
+        icon,
+        size: 45,
       })
     )
   }
