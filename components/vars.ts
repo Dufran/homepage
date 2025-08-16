@@ -75,7 +75,7 @@ type project = {
   name: string
   description?: string
   start: Date
-  end: Date
+  end?: Date
   domain?: Domain
   technologies?: Skill[]
 }
@@ -714,7 +714,6 @@ export const planeksProjects: project[] = [
     description:
       'The Logistics Insight Platform is a comprehensive web application designed to provide clients with detailed insights into their logistics operations. It features a user-friendly interface that allows users to view and analyze various aspects of their logistics processes, including shipment tracking, inventory management, and performance metrics. The platform integrates seamlessly with third-party services to enhance functionality and provide real-time data updates, ensuring that clients have access to the most accurate and up-to-date information regarding their logistics operations.',
     domain: 'Logistics',
-    end: new Date('2025-05-31'),
     name: 'Logistics insight platform',
     start: new Date('2024-12-06'),
     technologies: [
@@ -891,6 +890,15 @@ export const audioBookSeries: AudioBookSeries[] = [
     link: 'https://www.amazon.com/s?k=Eisenhorn&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=eisenhorn%2Cdigital-text%2C184&ref=nb_sb_noss_2',
     name: 'Eisenhorn',
     total_count: 3,
+  },
+  {
+    current_book: 'The Infinite and Divine',
+    current_count: 1,
+    description:
+      'The Infinite and Divine is a novel set in the Warhammer 40,000 universe, exploring the conflict between the Necron and the Aeldari.',
+    link: 'https://www.amazon.com/s?k=The+Infinite+and+Divine&i=digital-text&crid=3F9SYPCFKBRY1&sprefix=the+infinite+and+divine%2Cdigital-text%2C184&ref=nb_sb_noss_2',
+    name: 'The Infinite and Divine',
+    total_count: 1,
   },
   {
     current_book: 'Leviathan Falls',

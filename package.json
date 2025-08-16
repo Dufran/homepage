@@ -25,7 +25,7 @@
 		"typescript": "5.8.2"
 	},
 	"name": "homepage - nextjs",
-	"packageManager": "yarn@4.9.1",
+	"packageManager": "yarn@4.9.2",
 	"private": true,
 	"scripts": {
 		"analyze": "ANALYZE=true next build",
