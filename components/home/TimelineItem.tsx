@@ -43,7 +43,14 @@ export default function ExperienceTimelineItem({
     >
       <Grid>
         <Grid.Col span={{ base: 12, md: 3 }}>
-          <Text fw={700}>{jobTitle}</Text>
+          <Group gap='xs'>
+            <Text fw={700}>{jobTitle}</Text>
+            {!end && (
+              <Badge color='green' size='sm'>
+                Current
+              </Badge>
+            )}
+          </Group>
           <Group>
             <Text p={2}>Projects done:</Text>
             <Badge size='md'>{projectsCount}</Badge>

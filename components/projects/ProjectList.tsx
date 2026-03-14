@@ -1,4 +1,4 @@
-import { Container, Grid, Group, MultiSelect, Title } from '@mantine/core'
+import { Center, Container, Grid, Group, MultiSelect, Text, Title } from '@mantine/core'
 import dayjs from 'dayjs'
 import { useMemo, useState } from 'react'
 import { coaxProjects, type Domain, planeksProjects, type SkillLabel, sebnProjects } from '../vars'
@@ -43,7 +43,7 @@ export default function ProjectList() {
       <Title ta='center' order={3}>
         List of commercial projects
       </Title>
-      <Group p='md'>
+      <Group p='md' wrap='wrap'>
         <MultiSelect
           label='Technologies'
           placeholder='Select technology'
@@ -52,6 +52,7 @@ export default function ProjectList() {
           data={technologies}
           value={selectedTechnologies}
           onChange={(value) => setSelectedTechnologies(value as SkillLabel[])}
+          style={{ flex: 1, minWidth: 200 }}
         />
         <MultiSelect
           label='Domains'
@@ -61,22 +62,29 @@ export default function ProjectList() {
           data={domains}
           value={selectedDomains}
           onChange={setSelectedDomains}
+          style={{ flex: 1, minWidth: 200 }}
         />
       </Group>
-      <Grid>
-        {filteredProjects.map((project) => (
-          <Grid.Col key={project.name} span={{ base: 12, md: 4 }}>
-            <ProjectItem
-              name={project.name}
-              domain={project.domain}
-              start={dayjs(project.start).format('YYYY-MM-DD')}
-              end={dayjs(project.end).format('YYYY-MM-DD')}
-              description={project.description}
-              technologies={project.technologies}
-            />
-          </Grid.Col>
-        ))}
-      </Grid>
+      {filteredProjects.length === 0 ? (
+        <Center py='xl'>
+          <Text c='dimmed'>No projects match your filters.</Text>
+        </Center>
+      ) : (
+        <Grid>
+          {filteredProjects.map((project) => (
+            <Grid.Col key={project.name} span={{ base: 12, md: 4 }}>
+              <ProjectItem
+                name={project.name}
+                domain={project.domain}
+                start={dayjs(project.start).format('YYYY-MM-DD')}
+                end={dayjs(project.end).format('YYYY-MM-DD')}
+                description={project.description}
+                technologies={project.technologies}
+              />
+            </Grid.Col>
+          ))}
+        </Grid>
+      )}
     </Container>
   )
 }

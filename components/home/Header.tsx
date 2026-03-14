@@ -18,13 +18,23 @@ export function Header() {
       component={Link}
       key={link.label}
       to={link.link}
-      data-active={link.link === pathname || undefined}
+      variant={link.link === pathname ? 'filled' : 'subtle'}
     >
       {link.label}
     </Button>
   ))
   return (
-    <Box>
+    <Box
+      style={{
+        backdropFilter: 'blur(12px)',
+        backgroundColor: 'color-mix(in srgb, var(--mantine-color-body) 80%, transparent)',
+        borderBottom: '1px solid var(--mantine-color-default-border)',
+        position: 'sticky',
+        top: 0,
+        WebkitBackdropFilter: 'blur(12px)',
+        zIndex: 100,
+      }}
+    >
       <Group justify='space-between' p='sm'>
         <Group gap={5}>{items}</Group>
         <Group justify='end'>

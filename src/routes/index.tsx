@@ -12,7 +12,7 @@ export const Route = createFileRoute('/')({
 
 function HomePage() {
   return (
-    <Container fluid px='lg'>
+    <Container size='xl' px='lg'>
       <Header />
       <Group justify='center' mt='xl'>
         <Tooltip
@@ -20,7 +20,7 @@ function HomePage() {
           events={{ focus: true, hover: true, touch: true }}
           label={<Image src='/kenobi.webp' className={classes.kenobi} />}
         >
-          <Title order={1} ta='left' mt={20}>
+          <Title order={1} ta='center' mt={20}>
             👋 Hello there!
           </Title>
         </Tooltip>

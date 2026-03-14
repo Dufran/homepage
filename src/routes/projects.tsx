@@ -9,7 +9,7 @@ export const Route = createFileRoute('/projects')({
 
 function ProjectsPage() {
   return (
-    <Container fluid px='md'>
+    <Container size='xl' px='md'>
       <Header />
       <ProjectList />
     </Container>

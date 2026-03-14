@@ -42,17 +42,15 @@ export function UserInfo() {
     <Grid p='md'>
       <Grid.Col span={{ base: 12, sm: 6 }}>
         <Card withBorder h='100%' padding='xl' radius='md' className={classes.card}>
-          <Group>
-            <Avatar src='/profile.jpg' size={125} mx='auto' mt={-30} className={classes.avatar} />
-            <Stack>
-              <Text ta='center' fz='lg' fw={500} mt='sm'>
-                Oleksandr Korol
-              </Text>
-              <Text ta='center' fz='sm' c='dimmed'>
-                Fullstack engineer
-              </Text>
-            </Stack>
-          </Group>
+          <Stack align='center' mb='sm'>
+            <Avatar src='/profile.jpg' size={125} className={classes.avatar} />
+            <Text ta='center' fz='lg' fw={500}>
+              Oleksandr Korol
+            </Text>
+            <Text ta='center' fz='sm' c='dimmed' mt={-8}>
+              Fullstack engineer
+            </Text>
+          </Stack>
           <Group justify='start'>
             <Text className={classes.feature}>Experience:</Text>
             <Tooltip
