@@ -1,24 +1,24 @@
 import { ActionIcon, Box, Button, Group, useMantineColorScheme } from '@mantine/core'
 import { IconMoonStars, IconSun } from '@tabler/icons-react'
-import { usePathname } from 'next/navigation'
+import { Link, useRouterState } from '@tanstack/react-router'
 
 const links = [
-  { label: 'Home', link: '/' },
-  { label: 'Projects', link: '/projects' },
-  { label: 'Hobbies', link: '/hobbies' },
+  { label: 'Home', link: '/' as const },
+  { label: 'Projects', link: '/projects' as const },
+  { label: 'Hobbies', link: '/hobbies' as const },
 ]
 
 export function Header() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
   const dark = colorScheme
-  const location = usePathname()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
   const items = links.map((link) => (
     <Button
       p='xs'
-      component='a'
+      component={Link}
       key={link.label}
-      href={link.link}
-      data-active={link.link === location || undefined}
+      to={link.link}
+      data-active={link.link === pathname || undefined}
     >
       {link.label}
     </Button>

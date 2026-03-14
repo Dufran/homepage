@@ -1,12 +1,6 @@
 version: '3'
 
 tasks:
-  prod.deploy:
-    cmds:
-      - git pull
-      - docker compose build
-      - docker compose up -d
-      - docker system prune -f
   dev.lint:
     cmds:
       - yarn run lint:fix

@@ -1,5 +1,0 @@
-{$SITE_URL} {
-	handle {
-		reverse_proxy frontend:3000
-	}
-}

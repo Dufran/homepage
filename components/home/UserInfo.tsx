@@ -25,7 +25,6 @@ import {
 } from '@tabler/icons-react'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import img from '@/public/profile.jpg'
 import { coaxProjects, domains, planeksProjects, SocialLinks, sebnProjects } from '../vars'
 import classes from './UserInfo.module.css'
 
@@ -44,7 +43,7 @@ export function UserInfo() {
       <Grid.Col span={{ base: 12, sm: 6 }}>
         <Card withBorder h='100%' padding='xl' radius='md' className={classes.card}>
           <Group>
-            <Avatar src={img.src} size={125} mx='auto' mt={-30} className={classes.avatar} />
+            <Avatar src='/profile.jpg' size={125} mx='auto' mt={-30} className={classes.avatar} />
             <Stack>
               <Text ta='center' fz='lg' fw={500} mt='sm'>
                 Oleksandr Korol

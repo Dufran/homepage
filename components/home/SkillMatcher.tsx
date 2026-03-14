@@ -1,11 +1,11 @@
 import { Center, Container, MultiSelect, Title } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconClearAll } from '@tabler/icons-react'
-import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { coaxSkills, planeksSkills, sebnSkills } from '../vars'
 
-const SkillCloud = dynamic(() => import('@/components/home/SkillCloud'), { ssr: false })
+const SkillCloud = lazy(() => import('@/components/home/SkillCloud'))
+
 export default function SkillMatcher() {
   const allSkills = sebnSkills.concat(coaxSkills, planeksSkills)
   const [value, setValue] = useState<string[]>([])
@@ -18,7 +18,7 @@ export default function SkillMatcher() {
     }
     if (value.length === 3) {
       notifications.show({
-        message: 'We’ve got a winner! I’m skilled in exactly what you’re looking for.',
+        message: `We've got a winner! I'm skilled in exactly what you're looking for.`,
         title: 'Winner Winner, Skill Dinner! 🍽️🏆',
       })
     }
@@ -30,7 +30,7 @@ export default function SkillMatcher() {
     }
     if (value.length === 5) {
       notifications.show({
-        message: 'Jackpot! I’ve got this skill covered like a cozy blanket.',
+        message: `Jackpot! I've got this skill covered like a cozy blanket.`,
         title: 'Jackpot! 💰🔧',
       })
     }
@@ -48,7 +48,7 @@ export default function SkillMatcher() {
     }
     if (value.length === 8) {
       notifications.show({
-        message: 'Skill match alert! It’s like finding a unicorn, but real.',
+        message: `Skill match alert! It's like finding a unicorn, but real.`,
         title: 'Unicorn Alert! 🦄🚀',
       })
     }
@@ -80,7 +80,9 @@ export default function SkillMatcher() {
           data={allSkills.map((skill) => skill.label)}
         />
         <Center>
-          <SkillCloud />
+          <Suspense>
+            <SkillCloud />
+          </Suspense>
         </Center>
       </Container>
     </>
