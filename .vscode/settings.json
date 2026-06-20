@@ -11,7 +11,12 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"cSpell.words": ["kenobi", "soulslike", "Webshop"],
+	"cSpell.words": [
+		"Freshdesk",
+		"kenobi",
+		"soulslike",
+		"Webshop"
+	],
 	"github.copilot.chat.commitMessageGeneration.instructions": [
 		{
 			"file": ".github/copilot-commit-message-instructions.md"

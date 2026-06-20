@@ -106,12 +106,14 @@ export const SocialLinks: SocialLink[] = [
   {
     icon: IconMail,
     label: 'Contact',
-    url: 'mailto:korol.oleksandr.work@gmail.com',
+    url: 'mailto:oleksandr.korol.dev@gmail.com',
   },
 ]
 type SkillIcon =
   | 'adminer'
   | 'algolia'
+  | 'sysaid'
+  | 'freshdesk'
   | 'amazonec2'
   | 'amazonelasticache'
   | 'amazonrds'
@@ -213,6 +215,8 @@ export type SkillLabel =
   | 'Active Directory'
   | 'Adminer'
   | 'Algolia'
+  | 'SysAid'
+  | 'Freshdesk'
   | 'Ant Design'
   | 'AWS EC2'
   | 'AWS ElastiCache'
