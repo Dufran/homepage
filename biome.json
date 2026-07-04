@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.7/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
 	"assist": {
 		"actions": { "source": { "organizeImports": "on", "useSortedKeys": "on" } },
 		"enabled": true
@@ -161,7 +161,7 @@
 				"useValidTypeof": "error",
 				"useYield": "error"
 			},
-			"recommended": true,
+			"preset": "recommended",
 			"security": { "noBlankTarget": "error", "noGlobalEval": "warn" },
 			"style": {
 				"noCommonJs": "error",

@@ -1,5 +1,23 @@
 {
+	"[css]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[django-html]": {
+		"editor.defaultFormatter": "monosans.djlint"
+	},
 	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"[postcss]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[python]": {
@@ -11,12 +29,15 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"cSpell.words": [
-		"Freshdesk",
-		"kenobi",
-		"soulslike",
-		"Webshop"
-	],
+	"biome.configurationPath": "./frontend/biome.json",
+	"biome.enabled": true,
+	"biome.lsp.bin": {
+		"darwin-arm64": "./frontend/node_modules/@biomejs/cli-darwin-arm64/biome",
+		"darwin-x64": "./frontend/node_modules/@biomejs/cli-darwin-x64/biome",
+		"linux-x64": "./frontend/node_modules/@biomejs/cli-linux-x64/biome",
+		"win32-x64": "./frontend/node_modules/@biomejs/cli-win32-x64/biome.exe"
+	},
+	"biome.requireConfiguration": true,
 	"github.copilot.chat.commitMessageGeneration.instructions": [
 		{
 			"file": ".github/copilot-commit-message-instructions.md"

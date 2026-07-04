@@ -1,0 +1,52 @@
+{
+	"dictionaries": [
+		"en_us",
+		"softwareTerms",
+		"companies",
+		"filetypes",
+		"git",
+		"node",
+		"npm",
+		"typescript",
+		"html",
+		"css",
+		"python",
+		"docker"
+	],
+	"dictionaryDefinitions": [],
+	"ignorePaths": [
+		"**/nl.ts",
+		"docs/urls.json",
+		"**/schema.yml",
+		"**/shared-schema.yml",
+		"**/node_modules/**",
+		"**/dist/**",
+		".vscode/*.json",
+		"/docs/database/**",
+		"**/.yarn/**",
+		"**/build/**",
+		"**/.venv/**",
+		"**/migrations/**",
+		"**/templates/notifications/**",
+		"**/__pycache__/**",
+		"CHANGELOG.md",
+		"cspell.json",
+		"*.xml"
+	],
+	"ignoreRegExpList": [
+		"/https?:\\/\\/[^\\s)]+/g",
+		"/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/g",
+		"/sha256:[a-f0-9]{64}/g",
+		"/\\b[a-f0-9]{7,40}\\b/g"
+	],
+	"ignoreWords": [],
+	"import": [],
+	"language": "en",
+	"useGitignore": true,
+	"version": "0.2",
+	"words": [
+		"Instantiator",
+		"Noninteractive",
+		"Nonoctal"
+	]
+}
