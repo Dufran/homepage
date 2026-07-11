@@ -1,0 +1,40 @@
+---
+const pathname = Astro.url.pathname
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/hobbies/', label: 'Hobbies' },
+  { href: '/posts/', label: 'Posts' },
+]
+const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
+---
+
+<header class='site-header'>
+  <a class='site-title' href='/'>Oleksandr Korol</a>
+  <nav aria-label='Primary navigation'>
+    <ul>
+      {links.map(({ href, label }) => (
+        <li><a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a></li>
+      ))}
+    </ul>
+  </nav>
+  <button class='theme-toggle' type='button' aria-label='Switch to dark theme' title='Toggle color theme'>
+    <span aria-hidden='true'>◐</span>
+  </button>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.theme-toggle')
+  const setLabel = () => {
+    if (!button) return
+    const dark = document.documentElement.dataset.theme === 'dark'
+    button.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`)
+  }
+  button?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
+    document.documentElement.dataset.theme = next
+    localStorage.setItem('theme', next)
+    setLabel()
+  })
+  setLabel()
+</script>

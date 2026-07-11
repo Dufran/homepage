@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft)
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }))
+}
+
+type Props = {
+  post: CollectionEntry<'posts'>
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+---
+
+<BaseLayout
+  title={`${post.data.title} — Oleksandr Korol`}
+  description={post.data.description}
+  ogType='article'
+  publishedTime={post.data.pubDate}
+>
+  <article class='content'>
+    <p><a href='/posts/'>← Back to posts</a></p>
+    <header>
+      <h1>{post.data.title}</h1>
+      <p class='post-meta'>
+        By {post.data.author} · <time datetime={post.data.pubDate.toISOString()}>
+          {
+            post.data.pubDate.toLocaleDateString('en', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })
+          }
+        </time>
+      </p>
+      <p>
+        {post.data.tags.map((tag) => <span class='tag'>#{tag}</span>)}
+      </p>
+    </header>
+    <Content />
+  </article>
+</BaseLayout>

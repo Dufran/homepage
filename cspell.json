@@ -45,8 +45,11 @@
 	"useGitignore": true,
 	"version": "0.2",
 	"words": [
+		"Homelab",
 		"Instantiator",
+		"lifehack",
 		"Noninteractive",
-		"Nonoctal"
+		"Nonoctal",
+		"sysaid"
 	]
 }

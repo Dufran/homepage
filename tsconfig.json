@@ -1,32 +1,11 @@
 {
 	"compilerOptions": {
-		"allowImportingTsExtensions": true,
-		"allowJs": true,
-		"esModuleInterop": true,
-		"isolatedModules": true,
-		"jsx": "react-jsx",
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"module": "ESNext",
-		"moduleDetection": "force",
-		"moduleResolution": "bundler",
-		"noEmit": true,
+		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./*"]
-		},
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"target": "ES2020",
-		"types": ["vite/client"],
-		"useDefineForClassFields": true
+		}
 	},
-	"exclude": ["node_modules"],
-	"include": [
-		"src",
-		"components",
-		"theme.ts",
-		"vite.config.ts",
-		"**/*.ts",
-		"**/*.tsx"
-	]
+	"exclude": ["dist", "node_modules"],
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"]
 }

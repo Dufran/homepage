@@ -1,0 +1,98 @@
+---
+import { coaxProjects, planeksProjects, sebnProjects } from '../data/portfolio'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const allProjects = [...planeksProjects, ...coaxProjects, ...sebnProjects]
+const domains = [
+  ...new Set(allProjects.flatMap((project) => (project.domain ? [project.domain] : []))),
+].sort()
+const technologies = [
+  ...new Set(
+    allProjects.flatMap((project) => project.technologies?.map((skill) => skill.label) ?? [])
+  ),
+].sort()
+const month = (date?: Date) =>
+  date
+    ? new Intl.DateTimeFormat('en', { month: '2-digit', year: 'numeric' }).format(date)
+    : 'Present'
+---
+
+<BaseLayout title='Projects — Oleksandr Korol' description='Commercial projects by Oleksandr Korol'>
+  <div class='wide-content'>
+    <header>
+      <p class='eyebrow'>Portfolio</p>
+      <h1>Commercial projects</h1>
+      <p class='lede'>Filter by domain or combine technologies. A project must match every selected technology.</p>
+    </header>
+
+    <div class='projects-layout'>
+    <form class='filters project-sidebar' id='project-filters'>
+      <div class='filter-heading'>
+        <strong>Filter projects</strong>
+        <button type='reset'>Clear</button>
+      </div>
+      <fieldset>
+        <legend><strong>Domains</strong></legend>
+        <div class='filter-options'>
+          {domains.map((domain) => <label><input type='checkbox' name='domain' value={domain} /> {domain}</label>)}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><strong>Technologies</strong></legend>
+        <div class='filter-options'>
+          {technologies.map((technology) => <label><input type='checkbox' name='technology' value={technology} /> {technology}</label>)}
+        </div>
+      </fieldset>
+    </form>
+    <div class='project-results'>
+    <p id='project-count' class='muted' aria-live='polite'>{allProjects.length} projects shown</p>
+
+    <div class='project-grid' id='project-grid'>
+      {allProjects.map((project) => (
+        <article
+          class='card project-card'
+          data-domain={project.domain ?? ''}
+          data-technologies={project.technologies?.map((skill) => skill.label).join('|') ?? ''}
+        >
+          <h2>{project.name}</h2>
+          <div class='tags'>
+            {project.domain && <span class='tag'>{project.domain}</span>}
+            <span class='tag'>{month(project.start)} — {month(project.end)}</span>
+          </div>
+          {project.description && <p class='description'>{project.description}</p>}
+          <div class='tags' aria-label='Technologies'>
+            {project.technologies?.map((skill) => <span class='tag'>{skill.label}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class='empty-state' id='empty-state' hidden>No projects match all selected filters.</p>
+    </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#project-filters')
+  const cards = [...document.querySelectorAll<HTMLElement>('.project-card')]
+  const counter = document.querySelector<HTMLParagraphElement>('#project-count')
+  const empty = document.querySelector<HTMLParagraphElement>('#empty-state')
+  const updateProjects = () => {
+    if (!form) return
+    const data = new FormData(form)
+    const domains = data.getAll('domain').map(String)
+    const technologies = data.getAll('technology').map(String)
+    let visible = 0
+    for (const card of cards) {
+      const cardTechnologies = card.dataset.technologies?.split('|') ?? []
+      const domainMatches = domains.length === 0 || domains.includes(card.dataset.domain ?? '')
+      const technologiesMatch = technologies.every((technology) => cardTechnologies.includes(technology))
+      card.hidden = !(domainMatches && technologiesMatch)
+      if (!card.hidden) visible += 1
+    }
+    if (counter) counter.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'} shown`
+    if (empty) empty.hidden = visible !== 0
+  }
+  form?.addEventListener('change', updateProjects)
+  form?.addEventListener('reset', () => requestAnimationFrame(updateProjects))
+</script>

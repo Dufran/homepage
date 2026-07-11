@@ -1,77 +1,59 @@
-import {
-  type Icon,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconChefHat,
-  IconDeviceGamepad,
-  IconDeviceTv,
-  IconHeadset,
-  IconMail,
-  IconMusic,
-  IconReportAnalytics,
-  IconServer,
-  IconStar,
-  IconVacuumCleaner,
-  IconVinyl,
-  IconWreckingBall,
-} from '@tabler/icons-react'
-
-type Hobby = {
+export type Hobby = {
   name: string
-  icon: Icon
+  icon: string
   description?: string
 }
 export const hobbies: Hobby[] = [
   {
     description:
       'Big fan of audiobooks — especially when diving into sci-fi or fantasy worlds during a walk or commute.',
-    icon: IconHeadset,
+    icon: '🎧',
     name: 'Audiobooks',
   },
   {
     description:
       'From intergalactic adventures to gritty dystopias, I’m always up for a good sci-fi or fantasy binge.',
-    icon: IconDeviceTv,
+    icon: '📺',
     name: 'Movies & TV Shows',
   },
   {
     description:
       'Nothing beats unwinding in the kitchen — whether it’s cooking for family or freestyling a new recipe.',
-    icon: IconChefHat,
+    icon: '🍳',
     name: 'Cooking',
   },
   {
     description:
       'Tinkering with self-hosted tools and building a homelab scratches both my tech itch and curiosity.',
-    icon: IconServer,
+    icon: '🖥️',
     name: 'Homelab & Self-Hosting',
   },
   {
     description:
       'Fixing gadgets, reviving appliances, or bringing my son’s “battle-tested” toys back to life — it’s part challenge, part joy.',
-    icon: IconWreckingBall,
+    icon: '🛠️',
     name: 'Repair & Maintenance',
   },
   {
     description:
       'Whatever the genre, if it hits — it plays. Cranked-up music fuels my focus and coding flow.',
-    icon: IconVinyl,
+    icon: '🎵',
     name: 'Music Listening',
   },
   {
     description:
       'Picked up 5S principles at a previous job with strong Japanese roots. Since then, keeping spaces clean and organized has become second nature — it sharpens my focus and boosts efficiency.',
-    icon: IconVacuumCleaner,
+    icon: '✨',
     name: '5S Adept',
   },
   {
     description:
       'Gaming is my escape and inspiration — from narrative-rich RPGs to bone-crushing soulslike games.',
-    icon: IconDeviceGamepad,
+    icon: '🎮',
     name: 'Video Games',
   },
 ]
-type project = {
+export type Project = {
   name: string
   description?: string
   start: Date
@@ -79,35 +61,18 @@ type project = {
   domain?: Domain
   technologies?: Skill[]
 }
-
-type SocialLink = {
-  label: string
-  url: string
-  icon: Icon
-}
+export type SocialLink = { label: string; url: string; icon: string }
 export const SocialLinks: SocialLink[] = [
-  { icon: IconReportAnalytics, label: 'Coding stats', url: 'https://wakatime.com/@Dufran' },
+  { icon: '▥', label: 'Coding stats', url: 'https://wakatime.com/@Dufran' },
   {
-    icon: IconMusic,
+    icon: '♫',
     label: 'Current playlist',
     url: 'https://music.youtube.com/playlist?list=PLghlXbMeN9Km6qWlHa6M3G4Bwr00Pr9V4&si=8X8RYo8JymbxLGcQ',
   },
-  {
-    icon: IconBrandLinkedin,
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/oleksandr-korol/',
-  },
-  {
-    icon: IconBrandGithub,
-    label: 'Github',
-    url: 'https://github.com/Dufran',
-  },
-  { icon: IconStar, label: 'Favorite libraries', url: 'https://github.com/Dufran?tab=stars' },
-  {
-    icon: IconMail,
-    label: 'Contact',
-    url: 'mailto:oleksandr.korol.dev@gmail.com',
-  },
+  { icon: 'in', label: 'LinkedIn', url: 'https://www.linkedin.com/in/oleksandr-korol/' },
+  { icon: '⌘', label: 'Github', url: 'https://github.com/Dufran' },
+  { icon: '★', label: 'Favorite libraries', url: 'https://github.com/Dufran?tab=stars' },
+  { icon: '✉', label: 'Contact', url: 'mailto:oleksandr.korol.dev@gmail.com' },
 ]
 type SkillIcon =
   | 'adminer'
@@ -338,7 +303,7 @@ export type SkillLabel =
   | 'Yarn'
   | "Let's Encrypt"
 
-type Skill = {
+export type Skill = {
   icon?: SkillIcon
   label: SkillLabel
   adopted?: Date
@@ -486,7 +451,7 @@ export const domains: Domain[] = [
   'Real Estate',
 ]
 
-export const sebnProjects: project[] = [
+export const sebnProjects: Project[] = [
   {
     description:
       'Custom client for ACPV workplaces (specifically for electronic wire shrinking) that integrates key features such as the reimplementation of an existing login system from another production environment, utilizing pre-existing users and permissions. The system performs real-time checks on each element’s status to ensure that only completed and non-faulty parts are processed. Additionally, it updates the production system’s status once the process is finished, ensuring seamless workflow and accuracy in the production line.',
@@ -596,7 +561,7 @@ export const sebnProjects: project[] = [
   },
 ]
 
-export const coaxProjects: project[] = [
+export const coaxProjects: Project[] = [
   {
     description:
       'Comprehensive Social & Financial platform that enables users to simulate expenditure and income outcomes via the powerful Monte Carlo algorithm. The platform will seamlessly integrate with Yahoo Finance to access real-time currency pricing and historical data for ticker assets. Moreover, it will offer a range of robust methods for asset analysis such as CAPM, Historical Mean, and Custom models. The backend will be powered by FastAPI for executing complex mathematical calculations and running the Monte Carlo model efficiently, while the frontend will be supported by Django DRF for managing all other aspects including social networking features, saving and versioning of scenarios, and creating customizable templates for users.',
@@ -689,7 +654,7 @@ export const coaxProjects: project[] = [
   },
 ]
 
-export const planeksProjects: project[] = [
+export const planeksProjects: Project[] = [
   {
     description:
       'End user portal with custom API integration for ExactOnline and external ERP system. Includes user friendly UI for validating data from xls spreadsheets, and robust background API integration with ExactOnline and external ERP system. The platform also features a custom email template engine for sending notifications to users, ensuring seamless communication and data management.',

@@ -1,7 +1,12 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
 	"assist": {
-		"actions": { "source": { "organizeImports": "on", "useSortedKeys": "on" } },
+		"actions": {
+			"source": {
+				"organizeImports": "on",
+				"useSortedKeys": "on"
+			}
+		},
 		"enabled": true
 	},
 	"css": {
@@ -23,11 +28,11 @@
 	"files": {
 		"ignoreUnknown": false,
 		"includes": [
-			"**/*.{ts,json,tsx,mjs}",
+			"**/*.{astro,ts,mjs,json}",
 			"!dist",
-			"!src/routeTree.gen.ts",
 			"!node_modules",
-			"!**/api.ts"
+			"!.astro",
+			"!.pi-subagents"
 		]
 	},
 	"formatter": {
@@ -43,7 +48,11 @@
 		"lineWidth": 100,
 		"useEditorconfig": true
 	},
-	"html": { "formatter": { "selfCloseVoidElements": "always" } },
+	"html": {
+		"formatter": {
+			"selfCloseVoidElements": "always"
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"arrowParentheses": "always",
@@ -78,11 +87,11 @@
 	"linter": {
 		"enabled": true,
 		"includes": [
-			"**",
+			"**/*.{astro,ts,json}",
 			"!**/node_modules/**",
-			"!**/redux/api.ts",
-			"!**/*.{mjs,cjs,js,d.ts,d.mts}",
-			"!.storybook/main.ts"
+			"!dist/**",
+			"!.astro/**",
+			"!.pi-subagents/**"
 		],
 		"rules": {
 			"a11y": {
@@ -162,7 +171,10 @@
 				"useYield": "error"
 			},
 			"preset": "recommended",
-			"security": { "noBlankTarget": "error", "noGlobalEval": "warn" },
+			"security": {
+				"noBlankTarget": "error",
+				"noGlobalEval": "warn"
+			},
 			"style": {
 				"noCommonJs": "error",
 				"noImplicitBoolean": "off",
@@ -182,7 +194,10 @@
 				"useFragmentSyntax": "error",
 				"useNamingConvention": {
 					"level": "off",
-					"options": { "requireAscii": false, "strictCase": false }
+					"options": {
+						"requireAscii": false,
+						"strictCase": false
+					}
 				},
 				"useShorthandAssign": "error",
 				"useTemplate": "error",
@@ -233,10 +248,12 @@
 	},
 	"overrides": [
 		{
-			"includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+			"includes": ["**/*.ts", "**/*.mts", "**/*.cts"],
 			"linter": {
 				"rules": {
-					"complexity": { "noArguments": "error" },
+					"complexity": {
+						"noArguments": "error"
+					},
 					"correctness": {
 						"noConstAssign": "off",
 						"noGlobalObjectCalls": "off",
@@ -247,7 +264,9 @@
 						"noUnreachable": "off",
 						"noUnreachableSuper": "off"
 					},
-					"style": { "useConst": "error" },
+					"style": {
+						"useConst": "error"
+					},
 					"suspicious": {
 						"noClassAssign": "off",
 						"noDuplicateClassMembers": "off",
@@ -264,7 +283,27 @@
 				}
 			}
 		},
-		{ "formatter": { "lineWidth": 80 }, "includes": ["*.mdx"] }
+		{
+			"formatter": {
+				"lineWidth": 80
+			},
+			"includes": ["*.mdx"]
+		},
+		{
+			"includes": ["**/*.astro"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off",
+						"noUnusedVariables": "off"
+					}
+				}
+			}
+		}
 	],
-	"vcs": { "clientKind": "git", "enabled": false, "useIgnoreFile": false }
+	"vcs": {
+		"clientKind": "git",
+		"enabled": false,
+		"useIgnoreFile": false
+	}
 }

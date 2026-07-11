@@ -1,6 +1,15 @@
 version: '3'
 
 tasks:
+  dev:
+    cmds:
+      - yarn dev
   dev.lint:
     cmds:
-      - yarn run lint:fix
+      - yarn lint:fix
+  check:
+    cmds:
+      - yarn check
+  build:
+    cmds:
+      - yarn build

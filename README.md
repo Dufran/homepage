@@ -1,38 +1,63 @@
-# Mantine Next.js template
+# Oleksandr Korol — homepage and blog
 
-This is a template for [Next.js](https://nextjs.org/) pages router + [Mantine](https://mantine.dev/).
-If you want to use app router instead, see [next-app-template](https://github.com/mantinedev/next-app-template).
+A fully static, native [Astro](https://astro.build/) portfolio inspired by [AstroPaper](https://github.com/satnaing/astro-paper). Astro renders every page; accessible vanilla TypeScript provides the small interactive enhancements. The project has no React or UI-framework runtime.
 
-## Features
+## Routes and features
 
-This template comes with the following features:
+- `/` — profile, social links, searchable/selectable skills, and work timeline
+- `/projects` — domain and technology filters (selected technologies use AND matching)
+- `/hobbies` — keyboard-accessible hobby tabs, audiobook progress, and coding playlist
+- `/posts` — Markdown blog index
+- `/posts/<slug>` — statically generated post pages
+- Persistent system-aware light/dark theme, responsive navigation, SEO metadata, and sitemap
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+Portfolio content is maintained in `src/data/portfolio.ts`. Shared layout, navigation, and styles live in `src/layouts`, `src/components`, and `src/styles`.
 
-## npm scripts
+## Development
 
-### Build and dev scripts
+This project uses Yarn 4 and the Node version declared in `.nvmrc`.
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+```sh
+yarn install
+yarn dev
+```
 
-### Testing scripts
+Open `http://localhost:4321`. Production checks and build:
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+```sh
+yarn check
+yarn build
+yarn preview
+```
 
-### Other scripts
+`yarn check` runs Astro TypeScript/content validation and Biome across Astro, TypeScript, and JSON. `yarn lint:fix` applies Biome fixes, and `yarn format` formats supported files.
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+## Writing posts
+
+Create a `.md` or `.mdx` file in `src/content/posts`:
+
+```md
+---
+title: A useful title
+description: A concise summary used on the posts page and in metadata.
+pubDate: 2026-07-11
+author: Oleksandr Korol
+tags:
+  - engineering
+draft: false
+---
+
+Write the post in Markdown here.
+```
+
+The schema lives in `src/content.config.ts`. Draft posts are excluded from routes and listings.
+
+## Deployment
+
+The site builds to `dist/` for Cloudflare Pages:
+
+```sh
+yarn deploy
+```
+
+`wrangler.toml` points Cloudflare Pages to the static Astro output directory.

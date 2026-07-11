@@ -1,0 +1,90 @@
+---
+import { audioBookSeries, hobbies } from '../data/portfolio'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title='Hobbies — Oleksandr Korol' description='Hobbies and current interests of Oleksandr Korol'>
+  <div class='wide-content'>
+    <header>
+      <p class='eyebrow'>Beyond work</p>
+      <h1>Hobbies and interests</h1>
+      <p class='lede'>What keeps me curious, creative, and energized away from the editor.</p>
+    </header>
+
+    <div class='page-with-outline hobby-layout'>
+    <div class='tab-list outline-nav' role='tablist' aria-label='Hobbies'>
+      {hobbies.map((hobby, index) => (
+        <button
+          id={`tab-${index}`}
+          type='button'
+          role='tab'
+          aria-selected={index === 0 ? 'true' : 'false'}
+          aria-controls={`panel-${index}`}
+          tabindex={index === 0 ? 0 : -1}
+        >
+          <span aria-hidden='true'>{hobby.icon}</span> {hobby.name}
+        </button>
+      ))}
+    </div>
+
+    <div class='page-sections'>
+    {hobbies.map((hobby, index) => (
+      <section id={`panel-${index}`} role='tabpanel' aria-labelledby={`tab-${index}`} hidden={index !== 0}>
+        <h2>{hobby.name}</h2>
+        <p class='lede'>{hobby.description}</p>
+        {hobby.name === 'Audiobooks' && (
+          <div class='audiobook-grid'>
+            {audioBookSeries.map((series) => {
+              const complete = series.current_count >= series.total_count
+              return (
+                <article class='card audiobook-card'>
+                  <h3>{series.link ? <a href={series.link}>{series.name}</a> : series.name}</h3>
+                  <p>{series.description}</p>
+                  <p class='post-meta'>{complete ? `Completed all ${series.total_count} books` : `${series.current_count} of ${series.total_count} books · Current: ${series.current_book}`}</p>
+                  <progress value={series.current_count} max={series.total_count}>{series.current_count} of {series.total_count}</progress>
+                </article>
+              )
+            })}
+          </div>
+        )}
+        {hobby.name === 'Music Listening' && (
+          <div class='video-wrap'>
+            <iframe
+              src='https://www.youtube-nocookie.com/embed/videoseries?list=PLghlXbMeN9Km6qWlHa6M3G4Bwr00Pr9V4'
+              title='Oleksandr’s coding playlist on YouTube'
+              loading='lazy'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              allowfullscreen
+            ></iframe>
+          </div>
+        )}
+      </section>
+    ))}
+    </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[role="tab"]')]
+  const activate = (tab: HTMLButtonElement) => {
+    for (const candidate of tabs) {
+      const active = candidate === tab
+      candidate.ariaSelected = String(active)
+      candidate.tabIndex = active ? 0 : -1
+      const panel = document.getElementById(candidate.getAttribute('aria-controls') ?? '')
+      if (panel) panel.hidden = !active
+    }
+    tab.focus()
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab))
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+      event.preventDefault()
+      const target = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length
+      const nextTab = tabs[target]
+      if (nextTab) activate(nextTab)
+    })
+  })
+</script>
