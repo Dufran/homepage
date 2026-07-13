@@ -26,6 +26,13 @@ const imageURL = new URL(image, Astro.site)
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <style is:inline>
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        line-height: 1.65;
+        margin: 0;
+      }
+    </style>
     <meta name='description' content={description} />
     <meta name='author' content='Oleksandr Korol' />
     <meta name='generator' content={Astro.generator} />

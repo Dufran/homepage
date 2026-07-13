@@ -12,22 +12,26 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
     <p class='eyebrow'>Writing</p>
     <h1>Posts</h1>
     <p class='lede'>Notes about software engineering, tools, and things I learn.</p>
-    <ul class='post-list'>
+    <p class='post-order'>Newest first</p>
+    <ol class='post-timeline' aria-label='Posts, newest first'>
       {
         posts.map((post) => (
-          <li class='post-card'>
-            <a href={`/posts/${post.id}/`}>{post.data.title}</a>
-            <p>{post.data.description}</p>
-            <time class='post-meta' datetime={post.data.pubDate.toISOString()}>
-              {post.data.pubDate.toLocaleDateString('en', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
+          <li>
+            <time class='post-timeline-date' datetime={post.data.pubDate.toISOString()}>
+              <span>{post.data.pubDate.toLocaleDateString('en', { month: 'short' })}</span>
+              <strong>{post.data.pubDate.getDate()}</strong>
+              <span>{post.data.pubDate.getFullYear()}</span>
             </time>
+            <article class='post-card'>
+              <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+              <p>{post.data.description}</p>
+              <div class='tags' aria-label='Tags'>
+                {post.data.tags.map((tag) => <span class='tag'>#{tag}</span>)}
+              </div>
+            </article>
           </li>
         ))
       }
-    </ul>
+    </ol>
   </section>
 </BaseLayout>

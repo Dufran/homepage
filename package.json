@@ -2,7 +2,9 @@
 	"dependencies": {
 		"@astrojs/rss": "^4.0.19",
 		"@astrojs/sitemap": "^3.7.3",
-		"astro": "^7.0.7"
+		"astro": "^7.0.7",
+		"astro-mermaid": "^2.1.0",
+		"mermaid": "^11.16.0"
 	},
 	"description": "Astro portfolio and Markdown blog inspired by AstroPaper",
 	"devDependencies": {

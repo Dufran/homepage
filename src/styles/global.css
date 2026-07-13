@@ -132,10 +132,17 @@ progress { accent-color: var(--accent); height: .65rem; width: 100%; }
 .video-wrap { aspect-ratio: 16 / 9; margin: 1.5rem auto; max-width: 45rem; }
 .video-wrap iframe { border: 0; border-radius: .6rem; height: 100%; width: 100%; }
 
-.post-list { list-style: none; margin: 2rem 0; padding: 0; }
-.post-card { border-bottom: 1px dashed var(--border); padding: 1.5rem 0; }
+.post-order { color: var(--muted); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: .78rem; letter-spacing: .06em; margin: 2rem 0 1rem; text-transform: uppercase; }
+.post-timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.post-timeline::before { background: var(--border); content: ''; height: 100%; left: 5.35rem; position: absolute; top: 0; width: 2px; }
+.post-timeline > li { display: grid; gap: 2rem; grid-template-columns: 4.35rem minmax(0, 1fr); padding-bottom: 1.5rem; position: relative; }
+.post-timeline > li::before { background: var(--accent); border: 4px solid var(--bg); border-radius: 50%; content: ''; height: .85rem; left: 4.94rem; position: absolute; top: 1.55rem; width: .85rem; z-index: 1; }
+.post-timeline-date { align-items: center; color: var(--muted); display: flex; flex-direction: column; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: .72rem; line-height: 1.25; padding-top: 1rem; text-transform: uppercase; }
+.post-timeline-date strong { color: var(--text); font-size: 1.45rem; }
+.post-card { background: var(--surface); border: 1px solid var(--border); border-radius: .6rem; box-shadow: var(--shadow); padding: 1.25rem 1.4rem; }
 .post-card a { color: var(--text); font-size: 1.4rem; font-weight: 700; text-decoration: none; }
 .post-card a:hover { color: var(--accent); }
+.post-card p { color: var(--muted); margin: .6rem 0 1rem; }
 .post-meta { color: var(--muted); font-size: .9rem; }
 .content p, .content li { font-size: 1.05rem; }
 .content pre { background: #111827; border-radius: .5rem; color: #f9fafb; overflow-x: auto; padding: 1rem; }
@@ -165,5 +172,11 @@ progress { accent-color: var(--accent); height: .65rem; width: 100%; }
   .page-sections > section { scroll-margin-top: 8rem; }
   .theme-toggle { position: absolute; right: 0; top: .65rem; }
   .filters, .project-grid, .audiobook-grid { grid-template-columns: 1fr; }
+  .post-timeline::before { left: .42rem; }
+  .post-timeline > li { display: block; padding: 0 0 1.25rem 1.75rem; }
+  .post-timeline > li::before { left: 0; top: .45rem; }
+  .post-timeline-date { align-items: baseline; flex-direction: row; gap: .35rem; padding: 0 0 .45rem; }
+  .post-timeline-date strong { font-size: inherit; }
+  .post-card { padding: 1rem; }
   .social-list { grid-template-columns: 1fr; }
 }
