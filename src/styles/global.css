@@ -132,6 +132,9 @@ progress { accent-color: var(--accent); height: .65rem; width: 100%; }
 .video-wrap { aspect-ratio: 16 / 9; margin: 1.5rem auto; max-width: 45rem; }
 .video-wrap iframe { border: 0; border-radius: .6rem; height: 100%; width: 100%; }
 
+.rss-subscribe { align-items: center; background: var(--accent); border: 1px solid var(--accent); border-radius: .45rem; color: var(--bg); display: inline-flex; font-weight: 700; gap: .5rem; margin-top: .75rem; padding: .55rem .85rem; text-decoration: none; }
+.rss-subscribe:hover { background: var(--surface); color: var(--accent); }
+.rss-subscribe svg { flex: 0 0 auto; }
 .post-order { color: var(--muted); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: .78rem; letter-spacing: .06em; margin: 2rem 0 1rem; text-transform: uppercase; }
 .post-timeline { list-style: none; margin: 0; padding: 0; position: relative; }
 .post-timeline::before { background: var(--border); content: ''; height: 100%; left: 5.35rem; position: absolute; top: 0; width: 2px; }
