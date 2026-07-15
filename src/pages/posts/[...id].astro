@@ -13,13 +13,72 @@ type Props = {
 
 const { post } = Astro.props
 const { Content } = await render(post)
+const canonicalURL = new URL(`/posts/${post.id}/`, Astro.site)
+const image = post.data.image ?? '/og-default.jpg'
+const imageURL = new URL(image, Astro.site)
+const modifiedTime = post.data.updatedDate ?? post.data.pubDate
+const articleStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      articleSection: 'Software engineering',
+      author: {
+        '@id': 'https://dufran.org/#person',
+        '@type': 'Person',
+        name: 'Oleksandr Korol',
+        url: 'https://dufran.org/',
+      },
+      dateCreated: (post.data.created ?? post.data.pubDate).toISOString(),
+      dateModified: modifiedTime.toISOString(),
+      datePublished: post.data.pubDate.toISOString(),
+      description: post.data.description,
+      headline: post.data.title,
+      image: imageURL.href,
+      inLanguage: 'en',
+      isPartOf: { '@id': 'https://dufran.org/#website' },
+      keywords: post.data.tags,
+      mainEntityOfPage: canonicalURL.href,
+      publisher: { '@id': 'https://dufran.org/#person' },
+      url: canonicalURL.href,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          item: 'https://dufran.org/',
+          name: 'Home',
+          position: 1,
+        },
+        {
+          '@type': 'ListItem',
+          item: 'https://dufran.org/posts/',
+          name: 'Posts',
+          position: 2,
+        },
+        {
+          '@type': 'ListItem',
+          item: canonicalURL.href,
+          name: post.data.title,
+          position: 3,
+        },
+      ],
+    },
+  ],
+}
 ---
 
 <BaseLayout
   title={`${post.data.title} — Oleksandr Korol`}
   description={post.data.description}
+  image={image}
+  imageAlt={post.data.imageAlt ?? (post.data.image ? post.data.title : 'Oleksandr Korol — Software Engineer for fullstack systems, infrastructure, and automation')}
+  modifiedTime={modifiedTime}
   ogType='article'
   publishedTime={post.data.pubDate}
+  structuredData={articleStructuredData}
+  tags={post.data.tags}
 >
   <article class='content'>
     <p><a href='/posts/'>← Back to posts</a></p>
@@ -35,6 +94,15 @@ const { Content } = await render(post)
             })
           }
         </time>
+        {post.data.updatedDate && (
+          <> · Updated <time datetime={post.data.updatedDate.toISOString()}>
+            {post.data.updatedDate.toLocaleDateString('en', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </time></>
+        )}
       </p>
       <p>
         {post.data.tags.map((tag) => <span class='tag'>#{tag}</span>)}

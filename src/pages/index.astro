@@ -2,6 +2,8 @@
 import {
   coaxProjects,
   coaxSkills,
+  cvProfile,
+  cvSkillGroups,
   domains,
   getSkillProficiency,
   planeksProjects,
@@ -10,6 +12,7 @@ import {
   sebnProjects,
   sebnSkills,
   tools,
+  workExperiences,
 } from '../data/portfolio'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
@@ -36,58 +39,50 @@ const skillGroups = [
 const experienceStart = new Date('2020-02-01')
 const experienceYears = Math.floor((Date.now() - experienceStart.getTime()) / 31_556_952_000)
 const projectCount = sebnProjects.length + coaxProjects.length + planeksProjects.length
-const experiences = [
-  {
-    company: 'PLANEKS',
-    count: planeksProjects.length,
-    description:
-      'As a Fullstack Python/JS Developer at Planeks, I lead the development of scalable web applications by leveraging both back-end and front-end technologies. My role involves designing and implementing efficient server-side logic using Python, integrating with various databases, and ensuring a seamless user experience through responsive front-end development.',
-    role: 'Fullstack Developer',
-    start: new Date('2023-11-01'),
-  },
-  {
-    company: 'COAX Software',
-    count: coaxProjects.length,
-    description:
-      'As a Middle Python Developer at COAX Software, I focused on backend development using Django Rest Framework and FastAPI, contributing to a variety of projects. I collaborated closely with cross-functional teams to deliver high-quality software solutions, consistently applying best practices in code quality, security, and performance optimization.',
-    end: new Date('2023-11-01'),
-    role: 'Middle Python Developer',
-    start: new Date('2022-06-01'),
-  },
-  {
-    company: 'SEBN',
-    count: sebnProjects.length,
-    description:
-      'As a Software Engineer at SEBN, I gained deep insights into various production processes, including logistics, planning, and network infrastructure. I identified and investigated bottlenecks, collaborating closely with different company departments to design and implement software solutions that addressed those challenges. My role involved working hand in hand with clients, taking projects from initial concept through to the final product, ensuring that the software delivered met both technical requirements and business needs.',
-    end: new Date('2022-06-01'),
-    role: 'Software Engineer',
-    start: new Date('2020-02-01'),
-  },
-]
+const projectCounts = {
+  'COAX Software': coaxProjects.length,
+  PLANEKS: planeksProjects.length,
+  SEBN: sebnProjects.length,
+}
 const monthsBetween = (start: Date, end = new Date()) =>
   (end.getFullYear() - start.getFullYear()) * 12 + end.getMonth() - start.getMonth()
 const startedAgo = (start: Date) => {
   const years = Math.floor(monthsBetween(start) / 12)
   return years > 0 ? `${years} ${years === 1 ? 'year' : 'years'}` : `${monthsBetween(start)} months`
 }
-const recognition = [
-  'Expertise in backend development with a strong focus on performance optimization, unit testing, and security.',
-  'Building intuitive, user-friendly interfaces with React, always considering the end-user experience and suggesting improvements on the spot.',
-  'Deep knowledge of Unix-based systems, deployment workflows, and server management — also a homelab and self-hosting enthusiast.',
-  'Effective collaboration with cross-functional teams to deliver high-quality software solutions.',
-  'Strong organizational skills with a history of managing project tasks efficiently.',
-  'Continuously staying informed about emerging technologies and trends, and proactively identifying the best tools and practices to improve productivity and software quality.',
-  'A product-first approach: consistently aligning development decisions with business goals and end-user needs.',
-  'Time-conscious and automation-focused, reducing manual overhead in favor of spending more time solving meaningful business problems with code.',
-]
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@id': `${cvProfile.website}/#person`,
+      '@type': 'Person',
+      email: `mailto:${cvProfile.email}`,
+      image: new URL('/profile-512.webp', Astro.site).href,
+      jobTitle: cvProfile.title,
+      knowsAbout: cvSkillGroups.flatMap((group) => group.skills),
+      name: cvProfile.name,
+      sameAs: [cvProfile.linkedIn, cvProfile.github],
+      url: cvProfile.website,
+    },
+    {
+      '@id': `${cvProfile.website}/#website`,
+      '@type': 'WebSite',
+      author: { '@id': `${cvProfile.website}/#person` },
+      description: cvProfile.professionalSummary,
+      inLanguage: 'en',
+      name: `${cvProfile.name} — Portfolio and engineering notes`,
+      url: cvProfile.website,
+    },
+  ],
+}
 ---
 
-<BaseLayout title='Oleksandr Korol — Fullstack Engineer'>
+<BaseLayout title={`${cvProfile.name} — ${cvProfile.shortTitle}`} structuredData={homeStructuredData}>
   <div class='wide-content'>
     <header>
       <p class='eyebrow'>Portfolio</p>
       <h1>👋 Hello there!</h1>
-      <p class='lede'>Fullstack Python and JavaScript engineer building scalable, product-focused web applications.</p>
+      <p class='lede'>{cvProfile.tagline}</p>
     </header>
 
     <div class='page-with-outline'>
@@ -100,9 +95,17 @@ const recognition = [
       <div class='page-sections'>
     <section id='about' class='profile-grid' aria-labelledby='about-title'>
       <div class='card profile-card'>
-        <img class='avatar' src='/profile.jpg' alt='Oleksandr Korol' width='128' height='128' />
+        <img
+          class='avatar'
+          src='/profile-256.webp'
+          srcset='/profile-256.webp 1x, /profile-512.webp 2x'
+          alt='Oleksandr Korol'
+          width='128'
+          height='128'
+          decoding='async'
+        />
         <h2 id='about-title'>Oleksandr Korol</h2>
-        <p class='muted'>Fullstack engineer</p>
+        <p class='muted'>{cvProfile.shortTitle}</p>
         <div class='stat-list'>
           <div><strong>Experience:</strong> {experienceYears}+ years</div>
           <div><strong>Projects done:</strong> {projectCount}</div>
@@ -115,21 +118,21 @@ const recognition = [
         </ul>
       </div>
       <div>
-        <h2>Fullstack Python/JavaScript Developer</h2>
-        <p>Experienced in designing and implementing scalable web applications using modern frameworks such as Django, FastAPI, and React. Known for adaptability, accountability, and strong problem-solving abilities, with a proven track record of delivering robust solutions aligned with project goals and industry best practices. Brings a strong product-oriented mindset and thrives in dynamic startup environments, with extensive experience building projects from the ground up.</p>
-        <p>Driven by time efficiency — if part of a workflow can be automated, I’ll automate it using the best available tools. This helps free up time for what I enjoy most: writing clean, effective code to solve real business challenges.</p>
+        <h2>{cvProfile.title}</h2>
+        <p>{cvProfile.professionalSummary}</p>
+        <p>{cvProfile.automationSummary}</p>
         <h3>Recognized for</h3>
-        <ul class='recognition-list'>{recognition.map((item) => <li>{item}</li>)}</ul>
+        <ul class='recognition-list'>{cvProfile.highlights.map((item) => <li>{item}</li>)}</ul>
       </div>
     </section>
 
     <section id='experience' aria-labelledby='timeline-title'>
       <h2 id='timeline-title'>Work experience</h2>
       <ol class='timeline'>
-        {experiences.map((experience) => (
+        {workExperiences.map((experience) => (
           <li>
             <div class='timeline-head'><h3>{experience.company}</h3><span class='tag'>{experience.role}</span></div>
-            <p class='post-meta'>{startedAgo(experience.start)} ago for {monthsBetween(experience.start, experience.end)} months · {experience.count} projects {experience.end ? '' : '· Current'}</p>
+            <p class='post-meta'>{startedAgo(experience.start)} ago for {monthsBetween(experience.start, experience.end)} months · {projectCounts[experience.company]} projects {experience.end ? '' : '· Current'}</p>
             <p>{experience.description}</p>
           </li>
         ))}

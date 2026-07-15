@@ -9,6 +9,7 @@ A fully static, native [Astro](https://astro.build/) portfolio inspired by [Astr
 - `/hobbies` — keyboard-accessible hobby tabs, audiobook progress, and coding playlist
 - `/posts` — Markdown blog index
 - `/posts/<slug>` — statically generated post pages
+- `/OleksandrKorolCV.pdf` — generated, text-based ATS-friendly CV
 - Persistent system-aware light/dark theme, responsive navigation, SEO metadata, and sitemap
 
 Portfolio content is maintained in `src/data/portfolio.ts`. Shared layout, navigation, and styles live in `src/layouts`, `src/components`, and `src/styles`.
@@ -31,6 +32,16 @@ yarn preview
 ```
 
 `yarn check` runs Astro TypeScript/content validation and Biome across Astro, TypeScript, and JSON. `yarn lint:fix` applies Biome fixes, and `yarn format` formats supported files.
+
+## Generating the CV
+
+The CV content comes from `cvProfile`, `workExperiences`, `cvSkillGroups`, and the project arrays in `src/data/portfolio.ts`. Regenerate the selectable-text PDF with:
+
+```sh
+yarn cv
+```
+
+This writes `public/OleksandrKorolCV.pdf`. Development and production builds run the generator automatically so the downloadable CV remains synchronized with the portfolio data.
 
 ## Writing posts
 

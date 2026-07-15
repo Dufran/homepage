@@ -8,5 +8,9 @@ export default defineConfig({
   },
   integrations: [mermaid({ autoTheme: true, enableLog: false }), sitemap()],
   output: 'static',
+  server: {
+    host: 'localhost',
+    port: 3000,
+  },
   site: 'https://dufran.org',
 })

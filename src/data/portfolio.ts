@@ -74,6 +74,81 @@ export const SocialLinks: SocialLink[] = [
   { icon: '★', label: 'Favorite libraries', url: 'https://github.com/Dufran?tab=stars' },
   { icon: '✉', label: 'Contact', url: 'mailto:oleksandr.korol.dev@gmail.com' },
 ]
+
+export type WorkExperience = {
+  company: 'COAX Software' | 'PLANEKS' | 'SEBN'
+  description: string
+  end?: Date
+  responsibilities: string[]
+  role: string
+  start: Date
+}
+
+export const cvProfile = {
+  automationSummary:
+    'Driven by time efficiency: if part of a workflow can be automated, I automate it using the best available tools, leaving more time to solve meaningful business problems with clean, effective code.',
+  email: 'oleksandr.korol.dev@gmail.com',
+  github: 'https://github.com/Dufran',
+  highlights: [
+    'Backend development with a strong focus on performance optimization, automated testing, and security.',
+    'Responsive React interfaces designed around intuitive end-user workflows.',
+    'Unix-based systems, deployment workflows, server management, and self-hosted infrastructure.',
+    'Cross-functional collaboration and product-focused technical decision making.',
+    'Workflow automation that reduces manual overhead and improves delivery efficiency.',
+  ],
+  languages: ['English B2', 'German A2', 'Ukrainian C2'],
+  linkedIn: 'https://www.linkedin.com/in/oleksandr-korol/',
+  name: 'Oleksandr Korol',
+  professionalSummary:
+    'Software engineer delivering product-focused systems end to end: Python APIs, React interfaces, third-party integrations, workflow automation, and production infrastructure across Linux, Docker, and virtual machines. Adaptable and accountable, with a track record of taking robust solutions from initial design through deployment and operation.',
+  shortTitle: 'Fullstack & Infrastructure Engineer',
+  tagline:
+    'Building product-focused software from application code and integrations to Linux, Docker, virtual machines, and deployment automation.',
+  title: 'Software Engineer — Fullstack, Infrastructure & Automation',
+  website: 'https://dufran.org',
+} as const
+
+export const workExperiences: WorkExperience[] = [
+  {
+    company: 'PLANEKS',
+    description:
+      'Lead the development of scalable web applications across backend services, responsive frontend interfaces, integrations, and production infrastructure.',
+    responsibilities: [
+      'Design and implement server-side application logic with Python, Django, Django REST Framework, and FastAPI.',
+      'Build responsive React and TypeScript interfaces and integrate them with backend APIs.',
+      'Deploy and troubleshoot Dockerized services on Linux virtual machines, including reverse proxies, background processing, and production integrations.',
+    ],
+    role: 'Fullstack Developer',
+    start: new Date('2023-11-01'),
+  },
+  {
+    company: 'COAX Software',
+    description:
+      'Developed backend systems and APIs for commercial products while collaborating with cross-functional teams to deliver secure, maintainable software.',
+    end: new Date('2023-11-01'),
+    responsibilities: [
+      'Implemented backend services and REST APIs using Python, Django REST Framework, and FastAPI.',
+      'Improved application quality through automated testing, code review, performance work, and security practices.',
+      'Integrated databases, queues, cloud services, and external APIs across multiple product domains.',
+    ],
+    role: 'Middle Python Developer',
+    start: new Date('2022-06-01'),
+  },
+  {
+    company: 'SEBN',
+    description:
+      'Built internal software solutions for automotive manufacturing, logistics, planning, and network operations in close collaboration with business users.',
+    end: new Date('2022-06-01'),
+    responsibilities: [
+      'Investigated production bottlenecks and translated operational requirements into maintainable software solutions.',
+      'Delivered projects from initial concept through implementation, rollout, and user support.',
+      'Automated business workflows and integrated systems used across multiple company departments.',
+    ],
+    role: 'Software Engineer',
+    start: new Date('2020-02-01'),
+  },
+]
+
 type SkillIcon =
   | 'adminer'
   | 'algolia'
@@ -323,6 +398,7 @@ export type SkillLabel =
   | 'UV'
   | 'Vite'
   | 'Vitest'
+  | 'Virtual Machines'
   | 'VS Code'
   | 'Warp'
   | 'WebSockets'
@@ -505,6 +581,7 @@ export const tools: Skill[] = [
   { icon: 'metabase', label: 'Metabase' },
   { icon: 'sqlite', label: 'SQLite' },
   { icon: 'ubuntu', label: 'Ubuntu' },
+  { label: 'Virtual Machines' },
   { label: 'Astro' },
   { label: 'Pyrefly' },
 ]
@@ -581,6 +658,7 @@ const proficientSkills: ReadonlySet<SkillLabel> = new Set([
   'UV',
   'Vite',
   'Vitest',
+  'Virtual Machines',
   'WebSockets',
   'WebView',
   'XML',
@@ -597,6 +675,34 @@ export const getSkillProficiency = (label: SkillLabel): SkillProficiency => {
   }
   return 'familiar'
 }
+
+export const cvSkillGroups: { label: string; skills: SkillLabel[] }[] = [
+  {
+    label: 'Backend',
+    skills: ['Python', 'Django', 'DRF', 'FastAPI', 'Celery', 'Pydantic', 'WebSockets'],
+  },
+  {
+    label: 'Frontend',
+    skills: ['JS', 'TypeScript', 'React', 'Redux', 'RTK Query', 'HTML', 'CSS'],
+  },
+  {
+    label: 'Data and infrastructure',
+    skills: [
+      'PostgreSQL',
+      'Redis',
+      'MySQL',
+      'Docker',
+      'Linux',
+      'Virtual Machines',
+      'Nginx',
+      'Elasticsearch',
+    ],
+  },
+  {
+    label: 'Quality and delivery',
+    skills: ['Unit Testing', 'Pytest', 'Playwright', 'Git', 'Github Actions', 'Sentry', 'Ruff'],
+  },
+]
 
 export type Domain =
   | 'Healthcare'
