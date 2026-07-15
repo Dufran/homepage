@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.4/schema.json",
 	"assist": {
 		"actions": {
 			"source": {
@@ -11,7 +11,7 @@
 	},
 	"css": {
 		"formatter": {
-			"enabled": false,
+			"enabled": true,
 			"indentStyle": "tab",
 			"indentWidth": 2,
 			"lineEnding": "lf",
@@ -19,10 +19,10 @@
 			"quoteStyle": "double"
 		},
 		"linter": {
-			"enabled": false
+			"enabled": true
 		},
 		"parser": {
-			"cssModules": false
+			"cssModules": true
 		}
 	},
 	"files": {
