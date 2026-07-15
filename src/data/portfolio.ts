@@ -995,9 +995,28 @@ export const planeksProjects: Project[] = [
   },
   {
     description:
+      'A backend-only custom API gateway integration service connecting the AEOS access-control and Saturn logistics systems. It processes webhook events to coordinate visitor registration, QR-code access, loading-area permissions, and truck entry and exit workflows. The project intentionally has no frontend.',
+    domain: 'Logistics',
+    end: new Date('2026-03-16'),
+    name: 'Gate access integration service',
+    start: new Date('2025-06-24'),
+    technologies: [
+      { icon: 'django', label: 'Django' },
+      { icon: 'django', label: 'DRF' },
+      { icon: 'celery', label: 'Celery' },
+      { icon: 'caddy', label: 'Caddy' },
+      { icon: 'redis', label: 'Redis' },
+      { icon: 'postgresql', label: 'PostgreSQL' },
+      { icon: 'sentry', label: 'Sentry' },
+      { icon: 'docker', label: 'Docker' },
+      { label: 'XML' },
+    ],
+  },
+  {
+    description:
       'End user portal with custom API integration for ExactOnline and external ERP system. Includes user friendly UI for validating data from xls spreadsheets, and robust background API integration with ExactOnline and external ERP system. The platform also features a custom email template engine for sending notifications to users, ensuring seamless communication and data management.',
     domain: 'Logistics',
-    end: new Date('2025-06-19'),
+    end: new Date('2026-06-24'),
     name: 'ExactOnline custom API integration',
     start: new Date('2025-05-19'),
     technologies: [
@@ -1043,7 +1062,7 @@ export const planeksProjects: Project[] = [
     description:
       'The warehouse gate management system is a browser-based application designed to streamline the entry process for truck drivers. By interfacing with third-party services, it automates key tasks such as license plate recognition, booking reference validation, and driver ID verification. This integration enhances the efficiency and accuracy of the gate entry process, reducing wait times and improving overall operational flow within the warehouse.',
     domain: 'Logistics',
-    end: new Date('2024-11-30'),
+    end: new Date('2026-04-27'),
     name: 'Warehouse access control system',
     start: new Date('2024-09-23'),
     technologies: [
@@ -1100,7 +1119,7 @@ export const planeksProjects: Project[] = [
     description:
       'Customs is a portal for clients of a logistics company. It provides users with an interactive and fast way to submit customs documents, provide seamless delivery of goods, and freight tracking along the shipment lifecycle. Behind the scenes, we are handling direct integration with the government customs system via XML file transfers. Also as a part of the client ecosystem, we integrated our emailing/reporting to Office365 via API',
     domain: 'Logistics',
-    end: new Date('2024-07-30'),
+    end: new Date('2026-04-02'),
     name: 'Customs portal',
     start: new Date('2024-05-01'),
     technologies: [
@@ -1120,7 +1139,7 @@ export const planeksProjects: Project[] = [
     description:
       'Fulfillment is a portal for clients of logistic company. It allows clients to streamline common operations. With fulfillment clients can effortlessly track incoming and outgoing orders, access detailed order information, and receive real-time notifications from the internal ERP system. Plus, our user-friendly interface includes a range of convenient features such as customizable reports and seamless integration with external API (https://frends.com/). We created a dedicated authorization service that enables Single Sign-On (SSO) across all existing portals. So the clients can enjoy a seamless and uninterrupted login experience across all 3 existing portals',
     domain: 'Logistics',
-    end: new Date('2024-05-30'),
+    end: new Date('2026-07-14'),
     name: 'Fulfillment portal',
     start: new Date('2024-02-30'),
     technologies: [
@@ -1181,8 +1200,8 @@ type AudioBookSeries = {
 
 export const audioBookSeries: AudioBookSeries[] = [
   {
-    current_book: 'Age of Darkness',
-    current_count: 16,
+    current_book: 'The Primarchs',
+    current_count: 20,
     description:
       'Let the galaxy burn! The Horus Heresy is a series of novels set in the Warhammer 40,000 universe, chronicling the events of the galaxy-spanning civil war that nearly destroyed',
     link: 'https://www.amazon.com/The-Horus-Heresy-54-book-series/dp/B0CQ2PKBFW',
