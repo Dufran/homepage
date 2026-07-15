@@ -180,6 +180,10 @@ export type SkillLabel =
   | 'Active Directory'
   | 'Adminer'
   | 'Algolia'
+  | 'Android'
+  | 'Android Studio'
+  | 'App Store Connect'
+  | 'Astro'
   | 'SysAid'
   | 'Freshdesk'
   | 'Ant Design'
@@ -190,6 +194,7 @@ export type SkillLabel =
   | 'AWS S3'
   | 'AWS SNS'
   | 'AWS SQS'
+  | 'AsyncAPI'
   | 'Bootstrap'
   | 'Biome'
   | 'Caddy'
@@ -201,8 +206,10 @@ export type SkillLabel =
   | 'DHCP'
   | 'Digital Ocean'
   | 'Django'
+  | 'Django Channels'
   | 'djlint'
   | 'Docker'
+  | 'DocuSign API'
   | 'DRF Spectacular'
   | 'DRF'
   | 'Elasticsearch'
@@ -212,14 +219,18 @@ export type SkillLabel =
   | 'Facebook API'
   | 'FastAPI'
   | 'Figma'
+  | 'Firebase Cloud Messaging'
   | 'Git'
   | 'Github Actions'
   | 'Github API'
   | 'GitHub Copilot'
   | 'GitHub'
   | 'Google Calendar API'
+  | 'Google Maps API'
   | 'Google Merchant API'
+  | 'Google Play Console'
   | 'Google Translate API'
+  | 'Gradle'
   | 'Hetzner Cloud'
   | 'Hoppscotch'
   | 'HTML'
@@ -245,6 +256,7 @@ export type SkillLabel =
   | 'Metabase'
   | 'MinIO'
   | 'MJML'
+  | 'Mobile App Publishing'
   | 'MongoDB'
   | 'MySQL'
   | 'Netdata'
@@ -262,12 +274,18 @@ export type SkillLabel =
   | 'PayPal'
   | 'PhP'
   | 'Pinterest API'
+  | 'Playwright'
   | 'Poetry'
+  | 'PostCSS'
   | 'PostgreSQL'
+  | 'Progressive Web Apps'
+  | 'PostHog'
   | 'Pre-commit'
   | 'Prettier'
   | 'Pydantic'
+  | 'Pydantic AI'
   | 'Pyenv'
+  | 'Pyrefly'
   | 'Pytest'
   | 'Python'
   | 'R2 Storage'
@@ -275,32 +293,45 @@ export type SkillLabel =
   | 'React'
   | 'Redis'
   | 'Redux'
+  | 'RTK Query'
   | 'Ruff'
   | 'Selenium'
   | 'Sentry'
   | 'SFTP'
+  | 'Salesforce API'
   | 'Shopify API'
   | 'SonarQube'
   | 'SQLite'
   | 'Stripe'
+  | 'Storybook'
   | 'Stylelint'
+  | 'Sumsub'
+  | 'Swift'
   | 'Tailscale'
+  | 'TanStack Router'
   | 'Slack API'
   | 'Telegram API'
+  | 'Testing Library'
   | 'Tempo API'
   | 'Trello'
   | 'Twilio'
+  | 'Typesense'
   | 'TypeScript'
   | 'Ubuntu'
   | 'UML'
   | 'Unit Testing'
   | 'UV'
   | 'Vite'
+  | 'Vitest'
   | 'VS Code'
   | 'Warp'
+  | 'WebSockets'
+  | 'WebView'
+  | 'Xcode'
   | 'XML'
   | 'Yahoo Finance API'
   | 'Yarn'
+  | 'Zod'
   | "Let's Encrypt"
 
 export type Skill = {
@@ -336,6 +367,8 @@ export const sebnSkills: Skill[] = [
   { icon: 'reactrouter', label: 'React Router' },
   { icon: 'redux', label: 'Redux' },
   { icon: 'mui', label: 'Material UI' },
+  { icon: 'sysaid', label: 'SysAid' },
+  { label: 'Telegram API' },
 ]
 
 export const coaxSkills: Skill[] = [
@@ -383,9 +416,16 @@ export const coaxSkills: Skill[] = [
   { label: 'AWS SNS' },
   { icon: 'amazonelasticache', label: 'AWS ElastiCache' },
   { icon: 'elasticsearch', label: 'Elasticsearch' },
+  { icon: 'github', label: 'Github API' },
+  { icon: 'jira', label: 'Jira API' },
+  { icon: 'opentelemetry', label: 'Open Telemetry' },
+  { label: 'Slack API' },
+  { label: 'Tempo API' },
 ]
 
 export const planeksSkills: Skill[] = [
+  { label: 'Android Studio' },
+  { label: 'App Store Connect' },
   { icon: 'selenium', label: 'Selenium' },
   { icon: 'netdata', label: 'Netdata' },
   { icon: 'tailscale', label: 'Tailscale' },
@@ -410,14 +450,47 @@ export const planeksSkills: Skill[] = [
   { icon: 'bootstrap', label: 'Bootstrap' },
   { icon: 'mantine', label: 'Mantine UI' },
   { icon: 'trello', label: 'Trello' },
+  { label: 'Android' },
+  { label: 'AsyncAPI' },
+  { label: 'Django Channels' },
+  { label: 'DocuSign API' },
+  { label: 'Firebase Cloud Messaging' },
+  { label: 'Google Maps API' },
+  { label: 'Google Play Console' },
+  { label: 'Gradle' },
+  { label: 'i18next' },
+  { label: 'MJML' },
+  { label: 'Mobile App Publishing' },
+  { label: 'Playwright' },
+  { label: 'PostCSS' },
+  { label: 'PostHog' },
+  { label: 'Progressive Web Apps' },
+  { label: 'Pydantic AI' },
+  { label: 'RTK Query' },
+  { label: 'Salesforce API' },
+  { label: 'Storybook' },
+  { label: 'Sumsub' },
+  { label: 'Swift' },
+  { label: 'TanStack Router' },
+  { label: 'Testing Library' },
+  { label: 'Typesense' },
+  { label: 'Vitest' },
+  { label: 'WebSockets' },
+  { label: 'WebView' },
+  { label: 'Xcode' },
+  { label: 'Zod' },
 ]
 
 export const tools: Skill[] = [
+  { icon: 'adminer', label: 'Adminer' },
   { icon: 'git', label: 'Git' },
   { icon: 'github', label: 'GitHub' },
   { icon: 'dbeaver', label: 'DBeaver' },
   { icon: 'docker', label: 'Docker' },
+  { icon: 'excalidraw', label: 'Excalidraw' },
+  { icon: 'freshdesk', label: 'Freshdesk' },
   { label: 'VS Code' },
+  { icon: 'githubcopilot', label: 'GitHub Copilot' },
   { label: 'NPM' },
   { icon: 'biome', label: 'Biome' },
   { icon: 'yarn', label: 'Yarn' },
@@ -429,7 +502,101 @@ export const tools: Skill[] = [
   { icon: 'figma', label: 'Figma' },
   { icon: 'macos', label: 'MacOS' },
   { icon: 'obsidian', label: 'Obsidian' },
+  { icon: 'metabase', label: 'Metabase' },
+  { icon: 'sqlite', label: 'SQLite' },
+  { icon: 'ubuntu', label: 'Ubuntu' },
+  { label: 'Astro' },
+  { label: 'Pyrefly' },
 ]
+
+export type SkillProficiency = 'core' | 'proficient' | 'familiar'
+
+const coreSkills: ReadonlySet<SkillLabel> = new Set([
+  'Celery',
+  'Django',
+  'Docker',
+  'DRF',
+  'Git',
+  'JS',
+  'Linux',
+  'PostgreSQL',
+  'Python',
+  'React',
+  'Redis',
+  'Redux',
+  'TypeScript',
+  'Unit Testing',
+])
+
+const proficientSkills: ReadonlySet<SkillLabel> = new Set([
+  'Algolia',
+  'AWS EC2',
+  'AWS S3',
+  'AWS SQS',
+  'Biome',
+  'Bootstrap',
+  'Caddy',
+  'CSS',
+  'Digital Ocean',
+  'Django Channels',
+  'DRF Spectacular',
+  'Electron JS',
+  'Elasticsearch',
+  'FastAPI',
+  'Firebase Cloud Messaging',
+  'Github Actions',
+  'HTML',
+  'HTMX',
+  'i18next',
+  'Leaflet',
+  'Mantine UI',
+  'Material UI',
+  'MJML',
+  'MySQL',
+  'Nginx',
+  'NumPy',
+  'OAuth2',
+  'Office 365 API',
+  'OpenAI api',
+  'Pandas',
+  'Playwright',
+  'Poetry',
+  'Pre-commit',
+  'Progressive Web Apps',
+  'Pydantic',
+  'Pyrefly',
+  'Pytest',
+  'R2 Storage',
+  'React Router',
+  'RTK Query',
+  'Ruff',
+  'Salesforce API',
+  'Selenium',
+  'Sentry',
+  'Storybook',
+  'Stripe',
+  'Stylelint',
+  'Testing Library',
+  'Twilio',
+  'UV',
+  'Vite',
+  'Vitest',
+  'WebSockets',
+  'WebView',
+  'XML',
+  'Yarn',
+  'Zod',
+])
+
+export const getSkillProficiency = (label: SkillLabel): SkillProficiency => {
+  if (coreSkills.has(label)) {
+    return 'core'
+  }
+  if (proficientSkills.has(label)) {
+    return 'proficient'
+  }
+  return 'familiar'
+}
 
 export type Domain =
   | 'Healthcare'
@@ -440,6 +607,7 @@ export type Domain =
   | 'Logistics'
   | 'Telecom'
   | 'Real Estate'
+  | 'Human Resources'
 export const domains: Domain[] = [
   'Healthcare',
   'Fintech',
@@ -449,6 +617,7 @@ export const domains: Domain[] = [
   'Logistics',
   'Telecom',
   'Real Estate',
+  'Human Resources',
 ]
 
 export const sebnProjects: Project[] = [
@@ -655,6 +824,69 @@ export const coaxProjects: Project[] = [
 ]
 
 export const planeksProjects: Project[] = [
+  {
+    description:
+      'A web platform for managing property listings and reservations. I contributed to full-stack features, integrations, notifications, real-time updates, and supporting infrastructure.',
+    domain: 'Real Estate',
+    name: 'Housing booking platform',
+    start: new Date('2026-05-28'),
+    technologies: [
+      { icon: 'django', label: 'Django' },
+      { icon: 'django', label: 'DRF' },
+      { icon: 'react', label: 'React' },
+      { icon: 'typescript', label: 'TypeScript' },
+      { icon: 'redux', label: 'Redux' },
+      { icon: 'mantine', label: 'Mantine UI' },
+      { label: 'TanStack Router' },
+      { label: 'RTK Query' },
+      { icon: 'celery', label: 'Celery' },
+      { label: 'Django Channels' },
+      { label: 'WebSockets' },
+      { label: 'AsyncAPI' },
+      { icon: 'redis', label: 'Redis' },
+      { icon: 'postgresql', label: 'PostgreSQL' },
+      { icon: 'sentry', label: 'Sentry' },
+      { label: 'Playwright' },
+      { label: 'Vitest' },
+      { icon: 'caddy', label: 'Caddy' },
+      { icon: 'docker', label: 'Docker' },
+    ],
+  },
+  {
+    description:
+      'A digital staffing platform connecting migrant flex workers with Dutch employers in logistics, horticulture, and production. I contributed across the worker and manager journeys, including jobs and applications, housing reservations, messaging, candidate controls, CV upload and asynchronous AI-assisted parsing, application analytics, and integrations with staffing, identity-verification, document-signing, search, and notification services.',
+    domain: 'Human Resources',
+    name: 'Digital staffing platform',
+    start: new Date('2025-08-15'),
+    technologies: [
+      { icon: 'django', label: 'Django' },
+      { icon: 'django', label: 'DRF' },
+      { icon: 'react', label: 'React' },
+      { icon: 'typescript', label: 'TypeScript' },
+      { icon: 'redux', label: 'Redux' },
+      { icon: 'mantine', label: 'Mantine UI' },
+      { label: 'RTK Query' },
+      { icon: 'celery', label: 'Celery' },
+      { label: 'Django Channels' },
+      { label: 'WebSockets' },
+      { icon: 'redis', label: 'Redis' },
+      { icon: 'postgresql', label: 'PostgreSQL' },
+      { icon: 'openai', label: 'OpenAI api' },
+      { label: 'Pydantic AI' },
+      { label: 'Salesforce API' },
+      { label: 'DocuSign API' },
+      { label: 'Firebase Cloud Messaging' },
+      { label: 'Typesense' },
+      { label: 'PostHog' },
+      { label: 'Sumsub' },
+      { label: 'Android' },
+      { label: 'Swift' },
+      { label: 'Progressive Web Apps' },
+      { label: 'WebView' },
+      { icon: 'sentry', label: 'Sentry' },
+      { icon: 'docker', label: 'Docker' },
+    ],
+  },
   {
     description:
       'End user portal with custom API integration for ExactOnline and external ERP system. Includes user friendly UI for validating data from xls spreadsheets, and robust background API integration with ExactOnline and external ERP system. The platform also features a custom email template engine for sending notifications to users, ensuring seamless communication and data management.',

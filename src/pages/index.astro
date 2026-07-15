@@ -3,6 +3,7 @@ import {
   coaxProjects,
   coaxSkills,
   domains,
+  getSkillProficiency,
   planeksProjects,
   planeksSkills,
   SocialLinks,
@@ -14,6 +15,24 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
 const allSkills = [...sebnSkills, ...coaxSkills, ...planeksSkills, ...tools]
 const uniqueSkills = [...new Map(allSkills.map((skill) => [skill.label, skill])).values()]
+const skillGroups = [
+  {
+    description:
+      'Primary, sustained production stack; I can lead design, implementation, and troubleshooting.',
+    label: 'Core',
+    value: 'core',
+  },
+  {
+    description: 'Shipped in production and comfortable working independently.',
+    label: 'Proficient',
+    value: 'proficient',
+  },
+  {
+    description: 'Used in a narrower context; not claiming deep expertise.',
+    label: 'Familiar',
+    value: 'familiar',
+  },
+] as const
 const experienceStart = new Date('2020-02-01')
 const experienceYears = Math.floor((Date.now() - experienceStart.getTime()) / 31_556_952_000)
 const projectCount = sebnProjects.length + coaxProjects.length + planeksProjects.length
@@ -119,15 +138,23 @@ const recognition = [
 
     <section id='skills' aria-labelledby='skills-title'>
       <h2 id='skills-title'>Skills</h2>
-      <p class='muted'>Search or select skills to build a matching set.</p>
+      <p class='muted'>Qualitative levels based on repeated project work and hands-on delivery—not percentages or certifications.</p>
       <div class='form-control skill-picker'>
         <label for='skill-search'>Search skills</label>
         <input id='skill-search' type='search' placeholder='Try Django, React, PostgreSQL…' autocomplete='off' />
       </div>
       <p id='skill-feedback' class='skill-feedback' aria-live='polite'>Select skills to see how well we match.</p>
-      <div class='skill-cloud' aria-label='Available skills'>
-        {uniqueSkills.map((skill) => <button class='skill-chip' type='button' aria-pressed='false' data-label={skill.label}>{skill.label}</button>)}
-      </div>
+      {skillGroups.map((group) => (
+        <div class='skill-group' data-skill-group>
+          <h3>{group.label}</h3>
+          <p class='muted'>{group.description}</p>
+          <div class='skill-cloud' aria-label={`${group.label} skills`}>
+            {uniqueSkills
+              .filter((skill) => getSkillProficiency(skill.label) === group.value)
+              .map((skill) => <button class='skill-chip' type='button' aria-pressed='false' data-label={skill.label}>{skill.label}</button>)}
+          </div>
+        </div>
+      ))}
     </section>
       </div>
     </div>
@@ -153,6 +180,9 @@ const recognition = [
   search?.addEventListener('input', () => {
     const term = search.value.trim().toLowerCase()
     for (const chip of chips) chip.hidden = !chip.dataset.label?.toLowerCase().includes(term)
+    for (const group of document.querySelectorAll<HTMLElement>('[data-skill-group]')) {
+      group.hidden = ![...group.querySelectorAll<HTMLButtonElement>('.skill-chip')].some((chip) => !chip.hidden)
+    }
   })
   for (const chip of chips) {
     chip.addEventListener('click', () => {

@@ -1,3 +1,35 @@
+@font-face {
+  font-display: optional;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/fonts/inter-latin-400-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: optional;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ibm-plex-mono-latin-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: optional;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/ibm-plex-mono-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: optional;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/ibm-plex-mono-latin-700.woff2') format('woff2');
+}
+
 :root {
   color-scheme: light;
   --accent: #006cac;
@@ -31,7 +63,7 @@ html { background: var(--bg); scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   line-height: 1.65;
   margin: 0;
   min-height: 100vh;
