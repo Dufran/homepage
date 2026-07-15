@@ -960,7 +960,7 @@ export const planeksProjects: Project[] = [
   },
   {
     description:
-      'A digital staffing platform connecting migrant flex workers with Dutch employers in logistics, horticulture, and production. I contributed across the worker and manager journeys, including jobs and applications, housing reservations, messaging, candidate controls, CV upload and asynchronous AI-assisted parsing, application analytics, and integrations with staffing, identity-verification, document-signing, search, and notification services.',
+      'A digital staffing platform connecting migrant flex workers with employers in logistics, horticulture, and production. I contributed across the worker and manager journeys, including jobs and applications, housing reservations, messaging, candidate controls, CV upload and asynchronous AI-assisted parsing, application analytics, and integrations with staffing, identity-verification, document-signing, search, and notification services.',
     domain: 'Human Resources',
     name: 'Digital staffing platform',
     start: new Date('2025-08-15'),
@@ -1098,7 +1098,7 @@ export const planeksProjects: Project[] = [
   },
   {
     description:
-      'Customs is a portal for clients of a Netherlands logistics company. It provides users with an interactive and fast way to submit customs documents, provide seamless delivery of goods, and freight tracking along the shipment lifecycle. Behind the scenes, we are handling direct integration with the government customs system via XML file transfers. Also as a part of the client ecosystem, we integrated our emailing/reporting to Office365 via API',
+      'Customs is a portal for clients of a logistics company. It provides users with an interactive and fast way to submit customs documents, provide seamless delivery of goods, and freight tracking along the shipment lifecycle. Behind the scenes, we are handling direct integration with the government customs system via XML file transfers. Also as a part of the client ecosystem, we integrated our emailing/reporting to Office365 via API',
     domain: 'Logistics',
     end: new Date('2024-07-30'),
     name: 'Customs portal',
