@@ -37,6 +37,7 @@ const skillGroups = [
   },
 ] as const
 const experienceStart = new Date('2020-02-01')
+const currentExperience = workExperiences.find((experience) => !experience.end)
 const experienceYears = Math.floor((Date.now() - experienceStart.getTime()) / 31_556_952_000)
 const projectCount = sebnProjects.length + coaxProjects.length + planeksProjects.length
 const projectCounts = {
@@ -56,13 +57,30 @@ const homeStructuredData = {
     {
       '@id': `${cvProfile.website}/#person`,
       '@type': 'Person',
+      description: cvProfile.professionalSummary,
       email: `mailto:${cvProfile.email}`,
+      hasOccupation: {
+        '@type': 'Occupation',
+        description: cvProfile.tagline,
+        name: cvProfile.title,
+        skills: cvSkillGroups.flatMap((group) => group.skills),
+      },
       image: new URL('/profile-512.webp', Astro.site).href,
       jobTitle: cvProfile.title,
       knowsAbout: cvSkillGroups.flatMap((group) => group.skills),
+      knowsLanguage: cvProfile.languages.map((language) => ({
+        '@type': 'Language',
+        name: language,
+      })),
       name: cvProfile.name,
       sameAs: [cvProfile.linkedIn, cvProfile.github],
       url: cvProfile.website,
+      ...(currentExperience && {
+        worksFor: {
+          '@type': 'Organization',
+          name: currentExperience.company,
+        },
+      }),
     },
     {
       '@id': `${cvProfile.website}/#website`,
@@ -77,11 +95,11 @@ const homeStructuredData = {
 }
 ---
 
-<BaseLayout title={`${cvProfile.name} — ${cvProfile.shortTitle}`} structuredData={homeStructuredData}>
+<BaseLayout title={`${cvProfile.name} — Full-stack Developer & Infrastructure Engineer`} structuredData={homeStructuredData}>
   <div class='wide-content'>
     <header>
       <p class='eyebrow'>Portfolio</p>
-      <h1>👋 Hello there!</h1>
+      <h1>Oleksandr Korol — Full-stack Developer & Infrastructure Engineer</h1>
       <p class='lede'>{cvProfile.tagline}</p>
     </header>
 
